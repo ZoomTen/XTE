@@ -4,10 +4,10 @@ Begin VB.MDIForm frmMain
    AutoShowChildren=   0   'False
    BackColor       =   &H8000000F&
    Caption         =   "Xtreme Text Editor"
-   ClientHeight    =   6885
+   ClientHeight    =   6840
    ClientLeft      =   165
-   ClientTop       =   555
-   ClientWidth     =   11625
+   ClientTop       =   675
+   ClientWidth     =   11400
    Icon            =   "frmMain.frx":0000
    LinkMode        =   1  'Source
    LinkTopic       =   "System"
@@ -33,15 +33,33 @@ Begin VB.MDIForm frmMain
       AutoRedraw      =   -1  'True
       BorderStyle     =   0  'None
       ForeColor       =   &H80000008&
-      Height          =   6075
-      Left            =   9015
-      ScaleHeight     =   405
+      Height          =   6030
+      Left            =   8790
+      ScaleHeight     =   402
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   174
       TabIndex        =   37
       TabStop         =   0   'False
       Top             =   480
       Width           =   2610
+      Begin VB.OptionButton optDecHex 
+         Caption         =   "Bin"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   2
+         Left            =   570
+         TabIndex        =   49
+         Top             =   480
+         Width           =   615
+      End
       Begin VB.CommandButton cmdOfs 
          Caption         =   "ofs"
          Enabled         =   0   'False
@@ -146,7 +164,7 @@ Begin VB.MDIForm frmMain
          EndProperty
          Height          =   255
          Index           =   1
-         Left            =   195
+         Left            =   1245
          TabIndex        =   1
          Top             =   480
          Width           =   615
@@ -165,7 +183,7 @@ Begin VB.MDIForm frmMain
          Height          =   285
          Left            =   1605
          TabIndex        =   3
-         Top             =   480
+         Top             =   2895
          Width           =   420
       End
       Begin VB.TextBox txtDisplay 
@@ -203,7 +221,7 @@ Begin VB.MDIForm frmMain
          Height          =   285
          Left            =   2085
          TabIndex        =   4
-         Top             =   480
+         Top             =   2895
          Width           =   420
       End
       Begin VB.CommandButton cmdNum 
@@ -717,7 +735,7 @@ Begin VB.MDIForm frmMain
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   885
+         Left            =   1935
          TabIndex        =   2
          Top             =   480
          Value           =   -1  'True
@@ -843,12 +861,12 @@ Begin VB.MDIForm frmMain
       Height          =   480
       Left            =   0
       ScaleHeight     =   480
-      ScaleWidth      =   11625
+      ScaleWidth      =   11400
       TabIndex        =   0
       TabStop         =   0   'False
       Top             =   0
       Visible         =   0   'False
-      Width           =   11625
+      Width           =   11400
       Begin VB.PictureBox picTabControl 
          Appearance      =   0  'Flat
          BorderStyle     =   0  'None
@@ -1011,9 +1029,17 @@ Begin VB.MDIForm frmMain
          TabStop         =   0   'False
          Top             =   30
          Width           =   11535
-         _extentx        =   20346
-         _extenty        =   820
-         font            =   "frmMain.frx":024E
+         _ExtentX        =   20346
+         _ExtentY        =   820
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
       End
    End
    Begin VB.PictureBox picStatusBar 
@@ -1026,52 +1052,60 @@ Begin VB.MDIForm frmMain
       Left            =   0
       ScaleHeight     =   22
       ScaleMode       =   3  'Pixel
-      ScaleWidth      =   775
+      ScaleWidth      =   760
       TabIndex        =   43
       TabStop         =   0   'False
-      Top             =   6555
-      Width           =   11625
+      Top             =   6510
+      Width           =   11400
       Begin eXtremeScriptEditor.xpWellsStatusBar StatusBar 
          Height          =   330
          Left            =   0
          Top             =   0
          Width           =   11625
-         _extentx        =   20505
-         _extenty        =   582
-         backcolor       =   16053492
-         forecolor       =   0
-         forecolordissabled=   9474192
-         font            =   "frmMain.frx":0276
-         numberofpanels  =   7
-         maskcolor       =   0
-         pwidth1         =   249
-         ptttext1        =   ""
-         ptext1          =   ""
-         penabled1       =   -1  'True
-         pwidth2         =   178
-         ptttext2        =   ""
-         ptext2          =   ""
-         penabled2       =   -1  'True
-         pwidth3         =   176
-         ptttext3        =   ""
-         ptext3          =   "Copyright © 2008 HackMew"
-         penabled3       =   0   'False
-         pwidth4         =   18
-         ptttext4        =   ""
-         ptext4          =   "*"
-         penabled4       =   0   'False
-         pwidth5         =   37
-         ptttext5        =   ""
-         ptext5          =   "CAPS"
-         penabled5       =   0   'False
-         pwidth6         =   35
-         ptttext6        =   ""
-         ptext6          =   "NUM"
-         penabled6       =   0   'False
-         pwidth7         =   37
-         ptttext7        =   ""
-         ptext7          =   "SCRL"
-         penabled7       =   0   'False
+         _ExtentX        =   20505
+         _ExtentY        =   582
+         BackColor       =   16053492
+         ForeColor       =   0
+         ForeColorDissabled=   9474192
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         NumberOfPanels  =   7
+         MaskColor       =   0
+         PWidth1         =   249
+         pText1          =   ""
+         pTTText1        =   ""
+         pEnabled1       =   -1  'True
+         PWidth2         =   178
+         pText2          =   ""
+         pTTText2        =   ""
+         pEnabled2       =   -1  'True
+         PWidth3         =   176
+         pText3          =   "©'08 HackMew/©'22 Zumi"
+         pTTText3        =   ""
+         pEnabled3       =   0   'False
+         PWidth4         =   18
+         pText4          =   "*"
+         pTTText4        =   ""
+         pEnabled4       =   0   'False
+         PWidth5         =   37
+         pText5          =   "CAPS"
+         pTTText5        =   ""
+         pEnabled5       =   0   'False
+         PWidth6         =   35
+         pText6          =   "NUM"
+         pTTText6        =   ""
+         pEnabled6       =   0   'False
+         PWidth7         =   37
+         pText7          =   "SCRL"
+         pTTText7        =   ""
+         pEnabled7       =   0   'False
       End
    End
    Begin VB.Menu mnuFile 
@@ -1392,11 +1426,6 @@ Begin VB.MDIForm frmMain
          Caption         =   "Associate..."
          HelpContextID   =   42
       End
-      Begin VB.Menu mnuDecompileOptions 
-         Caption         =   "Decompile Options"
-         HelpContextID   =   64
-         Shortcut        =   ^D
-      End
    End
    Begin VB.Menu mnuTools 
       Caption         =   "Tools"
@@ -1405,41 +1434,10 @@ Begin VB.MDIForm frmMain
          Caption         =   "Script Templates"
          HelpContextID   =   45
       End
-      Begin VB.Menu mnuBatchCompiler 
-         Caption         =   "Batch Compiler"
-         HelpContextID   =   44
-         Shortcut        =   ^B
-      End
       Begin VB.Menu mnuTextAdjuster 
          Caption         =   "Text Adjuster"
          HelpContextID   =   46
          Shortcut        =   ^T
-      End
-      Begin VB.Menu mnuSep15 
-         Caption         =   "-"
-      End
-      Begin VB.Menu mnuHexViewer 
-         Caption         =   "Hex Viewer"
-         Enabled         =   0   'False
-         HelpContextID   =   14000
-         Shortcut        =   ^H
-      End
-      Begin VB.Menu mnuExpander 
-         Caption         =   "ROM Resizer"
-         Enabled         =   0   'False
-         HelpContextID   =   65
-         Shortcut        =   ^R
-      End
-      Begin VB.Menu mnuSep15b 
-         Caption         =   "-"
-      End
-      Begin VB.Menu mnuFreeSpaceFinder 
-         Caption         =   "Free Space Finder"
-         Enabled         =   0   'False
-      End
-      Begin VB.Menu mnuAdvanceTrainer 
-         Caption         =   "Advance Trainer"
-         Enabled         =   0   'False
       End
    End
    Begin VB.Menu mnuHelp 
@@ -1724,7 +1722,7 @@ End Type
 
 Private Declare Function GetWindowPlacement Lib "user32" (ByVal hWnd As Long, lpwndpl As WINDOWPLACEMENT) As Long
 Private Declare Function SetWindowPlacement Lib "user32" (ByVal hWnd As Long, lpwndpl As WINDOWPLACEMENT) As Long
-Private Declare Function MoveWindow Lib "user32" (ByVal hWnd As Long, ByVal x As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal bRepaint As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hWnd As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal bRepaint As Long) As Long
 
 Private Declare Function IsIconic Lib "user32" (ByVal hWnd As Long) As Long
 Private Declare Function OpenIcon Lib "user32" (ByVal hWnd As Long) As Long
@@ -1740,6 +1738,8 @@ Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As L
 
 Private lMinHeight As Long
 Private lMinWidth As Long
+
+Private hexDecBinLastOption As Integer
 
 Private Type MINMAXINFO
     ptReserved As POINTAPI
@@ -1971,10 +1971,10 @@ Dim i As Integer
     
 End Sub
 
-Private Sub MDIForm_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub MDIForm_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim MSG As Long
     
-    MSG = x \ Screen.TwipsPerPixelX
+    MSG = X \ Screen.TwipsPerPixelX
     
     If MSG = WM_LBUTTONDBLCLK Then
         AppActivate Me.hWnd
@@ -2097,9 +2097,6 @@ Dim sContents As String
 
 End Sub
 
-Private Sub mnuBatchCompiler_Click()
-    Show2 frmBatch, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
-End Sub
 
 Private Sub mnuBuiltinScripts_Click()
     Show2 frmTemplate, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
@@ -2125,9 +2122,6 @@ Private Sub mnuCalcPaste_Click()
     End If
 End Sub
 
-Private Sub mnuCheckNow_Click()
-    Show2 frmUpdate, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
-End Sub
 
 Private Sub mnuClearRecent_Click()
 Dim i As Long
@@ -2147,19 +2141,6 @@ End Sub
 Private Sub mnuCommandHelp_Click()
     Show2 frmReference, frmMain, CBool(mnuAlwaysonTop.Checked)
     frmReference.cboList.ListIndex = 0
-End Sub
-
-Private Sub mnuCompile_Click()
-    Document(Tabs.SelectedTab).Compile
-End Sub
-
-Private Sub mnuDebug_Click()
-    IsDebugging = True
-    Document(Tabs.SelectedTab).Compile
-End Sub
-
-Private Sub mnuDecompileOptions_Click()
-    Show2 frmDecompileOptions, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
 End Sub
 
 Private Sub mnuEdit_Click()
@@ -2214,9 +2195,6 @@ Private Sub mnuEditUndo_Click()
     mnuUndo_Click
 End Sub
 
-Private Sub mnuExpander_Click()
-    Show2 frmExpander, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
-End Sub
 
 Private Sub mnuFile_Click()
 
@@ -2264,9 +2242,6 @@ Private Sub mnuHelp_Click()
     mnuGuide.Enabled = FileExists(App.Path & "\Guide.chm")
 End Sub
 
-Private Sub mnuHexViewer_Click()
-    Show2 frmHexViewer, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
-End Sub
 
 Private Sub mnuIgnoreChanges_Click()
     mnuIgnoreChanges.Checked = Not mnuIgnoreChanges.Checked
@@ -2336,7 +2311,7 @@ Dim sFilePath As String
     
     If LenB(sFilePath) <> 0 Then
         If FileExists(sFilePath) Then
-            LoadNewDoc , sFilePath, True
+            LoadNewDoc , sFilePath
         Else
             MsgBox LoadResString(1003), vbCritical
         End If
@@ -2414,11 +2389,6 @@ Private Sub mnuTextAdjuster_Click()
     Show2 frmTextAdjuster, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
 End Sub
 
-Private Sub mnuTools_Click()
-    mnuFreeSpaceFinder.Enabled = FileExists(App.Path & "\FSF.exe")
-    mnuAdvanceTrainer.Enabled = FileExists(App.Path & "\A-Trainer.exe")
-End Sub
-
 Private Sub mnuTrayExit_Click()
     
     TrayI.cbSize = LenB(TrayI)
@@ -2470,40 +2440,77 @@ Dim i As Integer
 
     Select Case Index
         
-        Case 0
+        Case 0 ' Dec
             
+            For i = 0 To 9
+                cmdNum(i).Enabled = True
+            Next
             For i = 10 To 15
                 cmdNum(i).Enabled = False
             Next
             
-            If Not IsHex(txtDisplay.text) Then
-                cmdClear_Click
-            End If
             
-            txtDisplay.text = CLng("&H" & Right$(txtDisplay.text, 8) Xor &HFFFFFFFF + 1)
+            Select Case hexDecBinLastOption
+                Case 1 ' Hex
+                    If Not IsHex(txtDisplay.text) Then
+                        cmdClear_Click
+                    End If
+                    txtDisplay.text = CLng("&H" & Right$(txtDisplay.text, 8) Xor &HFFFFFFFF + 1)
+                Case 2 ' Bin
+                    txtDisplay.text = BinToDec(txtDisplay.text)
+            End Select
+            
             cmdPtr.Enabled = False
             cmdOfs.Enabled = False
             cmdPlusMinus.Enabled = True
             optDecHex(0).Value = True
             
-        Case 1
+        Case 1 ' Hex
             
-            For i = 10 To 15
+            For i = 0 To 15
                 cmdNum(i).Enabled = True
             Next
             
-            If Not IsNumeric(txtDisplay.text) Then
-                cmdClear_Click
-            End If
+            Select Case hexDecBinLastOption
+                Case 0 ' Dec
+                    If Not IsNumeric(txtDisplay.text) Then
+                        cmdClear_Click
+                    End If
+                    txtDisplay.text = Hex$(txtDisplay.text)
+                Case 2 ' Bin
+                    txtDisplay.text = Hex$(BinToDec(txtDisplay.text))
+            End Select
             
-            txtDisplay.text = Hex$(txtDisplay.text)
             cmdPtr.Enabled = True
             cmdOfs.Enabled = True
             cmdPlusMinus.Enabled = False
             optDecHex(1).Value = True
             
+        Case 2 ' Bin
+            
+            For i = 0 To 15
+                cmdNum(i).Enabled = False
+            Next
+            
+            cmdNum(0).Enabled = True
+            cmdNum(1).Enabled = True
+            
+            Select Case hexDecBinLastOption
+                Case 0 ' Dec
+                    txtDisplay.text = DecToBin$(txtDisplay.text)
+                Case 1 ' Hex
+                    txtDisplay.text = DecToBin$(CLng("&H" & Right$(txtDisplay.text, 8) Xor &HFFFFFFFF + 1))
+            End Select
+            
+            cmdPtr.Enabled = True
+            cmdOfs.Enabled = True
+            cmdPlusMinus.Enabled = False
+            optDecHex(2).Value = True
+            
     End Select
     
+    hexDecBinLastOption = Index
+
     CanOverwrite = True
     SidebarFocus
     
@@ -2742,6 +2749,10 @@ Const SW_HIDE = 0
     
 End Sub
 
+Private Sub Picture1_Click()
+
+End Sub
+
 Private Sub Tabs_TabClick(ByVal lTab As Long)
     
     If lTab > 1 Then
@@ -2894,7 +2905,7 @@ Dim sCommandLine As String
                     
                 Else
                 
-                    If LoadNewDoc(, Left$(sCommandLine, lFileEnd), False) = True Then
+                    If LoadNewDoc(, Left$(sCommandLine, lFileEnd)) = True Then
                         If Val("&H" & Mid$(sCommandLine, lFileEnd + 2)) = 0 Then
                             GoTo Finish
                         End If
@@ -2904,8 +2915,8 @@ Dim sCommandLine As String
                     
                 End If
                 
-                Document(Tabs.SelectedTab).txtOffset.text = Mid$(sCommandLine, lFileEnd + 2)
-                Decompile Left$(sCommandLine, lFileEnd), CLng("&H" & Mid$(sCommandLine, lFileEnd + 2))
+                'Document(Tabs.SelectedTab).txtOffset.text = Mid$(sCommandLine, lFileEnd + 2)
+                'Decompile Left$(sCommandLine, lFileEnd), CLng("&H" & Mid$(sCommandLine, lFileEnd + 2))
                 
             Else
                 
@@ -2922,7 +2933,7 @@ Dim sCommandLine As String
                             Tabs.TabText(Tabs.SelectedTab) = GetFileName(sCommandLine)
                             Document(Tabs.SelectedTab).LoadFile
                         Else
-                            Call LoadNewDoc(, sCommandLine, True)
+                            Call LoadNewDoc(, sCommandLine)
                         End If
                     
                 End Select
@@ -2936,7 +2947,7 @@ Finish:
 
 End Sub
 
-Public Function LoadNewDoc(Optional FirstTime As Boolean = False, Optional ByVal sFileName As String = vbNullString, Optional IsText As Boolean = True) As Boolean
+Public Function LoadNewDoc(Optional FirstTime As Boolean = False, Optional ByVal sFileName As String = vbNullString) As Boolean
 Dim i As Integer
 Dim sTemp As String
 
@@ -3001,37 +3012,29 @@ Dim sTemp As String
         Else
             Exit Function
         End If
-        
-        If IsText Then
             
-            sTemp = GetFileName(sFileName)
-        
-            For i = 1 To Tabs.TabCount
+        sTemp = GetFileName(sFileName)
+    
+        For i = 1 To Tabs.TabCount
+            
+            If Tabs.TabText(i) = sTemp Then
                 
-                If Tabs.TabText(i) = sTemp Then
-                    
-                    Tabs.SelectTab i
-                    
-                    If Document(i).LoadedFile = sFileName Then
-                        Exit Function
-                    End If
-                    
-                    Exit For
-                    
+                Tabs.SelectTab i
+                
+                If Document(i).LoadedFile = sFileName Then
+                    Exit Function
                 End If
                 
-            Next i
+                Exit For
+                
+            End If
             
-        End If
+        Next i
                                 
         If LenB(Document(Tabs.SelectedTab).txtCode.text) = 0 Then
 
-            If IsText Then
-                Tabs.TabText(Tabs.SelectedTab) = sTemp
-                Document(Tabs.SelectedTab).Caption = sTemp
-            Else
-                Document(Tabs.SelectedTab).Caption = Tabs.TabText(Tabs.SelectedTab)
-            End If
+            Tabs.TabText(Tabs.SelectedTab) = sTemp
+            Document(Tabs.SelectedTab).Caption = sTemp
 
         Else
             
@@ -3041,36 +3044,19 @@ Dim sTemp As String
                 Set Document(Tabs.TabCount + 1) = New frmRubIDE
             End If
                 
-            If IsText Then
-                Document(Tabs.TabCount + 1).Caption = sTemp
-                Document(Tabs.TabCount + 1).txtOffset.text = vbNullString
-            Else
-                lDocCounter = lDocCounter + 1
-                Document(Tabs.TabCount + 1).Caption = CaptionBase & lDocCounter
-            End If
+            Document(Tabs.TabCount + 1).Caption = sTemp
             
             ShowLines Document(Tabs.TabCount + 1).txtCode, CBool(mnuLineNumbers.Checked)
             Load Document(Tabs.TabCount + 1)
 
-            If IsText Then
-                Call AddTab(sTemp)
-            Else
-                Call AddTab
-            End If
+            Call AddTab(sTemp)
                                 
         End If
         
-        If IsText Then
-            Document(Tabs.SelectedTab).FileIndex = 0
-            Document(Tabs.SelectedTab).LoadedFile = sFileName
-            Document(Tabs.SelectedTab).cboFile.ListIndex = 0
-            Document(Tabs.SelectedTab).LoadFile
-        Else
-            Document(Tabs.SelectedTab).FileIndex = 1
-            Document(Tabs.SelectedTab).LoadedFile = sFileName
-            Document(Tabs.SelectedTab).cboFile.ListIndex = 1
-            MakeWritable sFileName
-        End If
+        Document(Tabs.SelectedTab).FileIndex = 0
+        Document(Tabs.SelectedTab).LoadedFile = sFileName
+        Document(Tabs.SelectedTab).cboFile.ListIndex = 0
+        Document(Tabs.SelectedTab).LoadFile
     
     End If
     
@@ -3088,7 +3074,7 @@ Private Sub cmdAnd_Click()
     
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
     End If
     
@@ -3163,7 +3149,7 @@ Dim lResult As Long
         
         If optDecHex(0).Value Then
             lOperand2 = CLng(txtDisplay.text)
-        Else
+        ElseIf optDecHex(1).Value Then
             lOperand2 = CLng("&H" & txtDisplay.text)
         End If
         
@@ -3248,7 +3234,7 @@ Dim lResult As Long
     
     If optDecHex(0).Value Then
         txtDisplay.text = lResult
-    Else
+    ElseIf optDecHex(1).Value Then
         txtDisplay.text = Hex$(lResult)
     End If
     
@@ -3278,7 +3264,7 @@ Private Sub cmdLs_Click()
     
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
     End If
     
@@ -3301,7 +3287,7 @@ Private Sub cmdSubtract_Click()
     
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
     End If
     
@@ -3372,7 +3358,7 @@ Private Sub cmdNot_Click()
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
         txtDisplay.text = Not lOperand1
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
         txtDisplay.text = Hex$(Not lOperand1)
     End If
@@ -3410,7 +3396,7 @@ Private Sub cmdOr_Click()
     
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
     End If
     
@@ -3466,7 +3452,7 @@ Private Sub cmdRs_Click()
     
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
     End If
     
@@ -3483,7 +3469,7 @@ Private Sub cmdXor_Click()
     
     If optDecHex(0).Value Then
         lOperand1 = CLng(txtDisplay.text)
-    Else
+    ElseIf optDecHex(1).Value Then
         lOperand1 = CLng("&H" & txtDisplay.text)
     End If
     
@@ -3529,14 +3515,7 @@ Dim sIniPath As String
     mnuInlineCommandHelp.Checked = CBool(ReadIniString(sIniPath, "Options", "InlineHelp", 1))
     'mnuAutomaticallyCheck.Checked = CBool(0)
 
-    NoLog = CBool(ReadIniString(sIniPath, "Options", "NoLog", 0))
     sEmulatorPath = ReadIniString(sIniPath, "Options", "EmulatorPath", vbNullString)
-
-    iDecompileMode = ReadIniString(sIniPath, "Options", "DecompileMode", 1)
-    iComments = ReadIniString(sIniPath, "Options", "Comments", 1)
-    iRefactoring = ReadIniString(sIniPath, "Options", "Refactoring", 0)
-    sCommentChar = ReadIniString(sIniPath, "Options", "CommentChar", "'")
-    sRefactorDynamic = ReadIniString(sIniPath, "Options", "RefactorDynamic")
 
     If CBool(ReadIniString(sIniPath, "Options", "AutoSave", 0)) = 1 Then
         mnuAutoSave.Checked = True
@@ -3628,7 +3607,6 @@ Dim sIniPath As String
     WriteStringToIni sIniPath, "Options", "CalcMode", -CInt(optDecHex(0).Value)
     WriteStringToIni sIniPath, "Options", "InlineHelp", -CInt(mnuInlineCommandHelp.Checked)
     WriteStringToIni sIniPath, "Options", "AutoUpdateCheck", "0"
-    WriteStringToIni sIniPath, "Options", "NoLog", -CInt(NoLog)
     WriteStringToIni sIniPath, "Options", "EmulatorPath", sEmulatorPath
     WriteStringToIni sIniPath, "Format", "BackgroundColor", lBackgroundColor
     WriteStringToIni sIniPath, "Format", "ForegroundColor", lForegroundColor
@@ -3783,8 +3761,6 @@ Dim i As Long
             Document(1).NewTabTemplate
         End If
         
-        InitCollections
-        MaxCommand = &HE2
         LoadCommands
         
         JustLoaded = True
@@ -3804,14 +3780,6 @@ Dim i As Long
                 CustomColors(i) = 255
             End If
         Next i
-        
-        'If mnuAutomaticallyCheck.Checked Then
-        '    Load frmUpdate
-        '    frmUpdate.vcLiveUpdate.AutoCheck = True
-        '    frmUpdate.vcLiveUpdate.NextStep
-        'Else
-        '    mnuCheckNow.Enabled = True
-        'End If
       
     Else
         
@@ -3898,13 +3866,6 @@ Dim iChanges As Integer
 Dim i As Byte
 
     If IsPrevInstance Then Exit Sub
-    
-    If IsOpen("frmUpdate") Then
-        If frmUpdate.vcLiveUpdate.IsUpdateReady Then
-            Cancel = True
-            Exit Sub
-        End If
-    End If
     
     iChanges = NoChanges
     
@@ -4070,8 +4031,7 @@ Public Sub mnuCut_Click()
 End Sub
 
 Private Sub mnuDateTime_Click()
-    
-    SendMessageStr Document(Tabs.SelectedTab).txtCode.hWnd, EM_REPLACESEL, 1&, "'" & TimeValue(time$) & _
+    SendMessageStr Document(Tabs.SelectedTab).txtCode.hWnd, EM_REPLACESEL, 1&, TimeValue(time$) & _
     ChrW$(32) & Mid$(Date$, 4, 2) & ChrW$(47) & Left$(Date$, 2) & ChrW$(47) & Right$(Date$, 4)
     
 End Sub
@@ -4217,7 +4177,7 @@ Dim sResult As String
 Dim oOpenDialog As clsCommonDialog
 
     Set oOpenDialog = New clsCommonDialog
-    sResult = oOpenDialog.ShowOpen(Me.hWnd, vbNullString, , "All Supported Files (*.rbc; *.rbh; *.rbt; *.gba)|*.rbc;*.rbh;*.rbt;*.gba|Script Files (*.rbc; *.rbh; *.rbt)|*.rbc;*.rbh;*.rbt|GameBoy Advance ROMs (*.gba)|*.gba|", FileMustExist Or PATHMUSTEXIST Or HideReadOnly)
+    sResult = oOpenDialog.ShowOpen(Me.hWnd, vbNullString, , "All Supported Files (*.rbc; *.rbh; *.rbt; *.asm)|*.rbc;*.rbh;*.rbt;*.asm|Script Files (*.rbc; *.rbh; *.rbt)|*.rbc;*.rbh;*.rbt|Assembly code (*.asm)|*.asm|", FileMustExist Or PATHMUSTEXIST Or HideReadOnly)
     
     If LenB(sResult) <> 0 Then
     
@@ -4229,19 +4189,13 @@ Dim oOpenDialog As clsCommonDialog
                 
                 Select Case GetExt(sResult)
                 
-                    Case "rbc", "rbh", "rbt"
-                        LoadNewDoc , sResult, True
-                        
-                    Case "gba"
-                        LoadNewDoc , sResult, False
+                    Case "rbc", "rbh", "rbt", "asm"
+                        LoadNewDoc , sResult
                     
                 End Select
             
-            Case 2
-                LoadNewDoc , sResult, True
-            
-            Case 3
-                LoadNewDoc , sResult, False
+            Case 2, 3
+                LoadNewDoc , sResult
                       
         End Select
         
@@ -4374,7 +4328,7 @@ Private Sub mnuSwapSidebarAlignment_Click()
     End Select
 End Sub
 
-Private Sub picSidebar_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub picSidebar_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     
     If Button = vbRightButton Then
         PopupMenu mnuSidebarPopup
@@ -4389,7 +4343,7 @@ Private Sub txtDisplay_GotFocus()
     SidebarFocus
 End Sub
 
-Private Sub txtDisplay_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtDisplay_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     
     If Button = vbLeftButton Then
         SidebarFocus
@@ -4429,7 +4383,7 @@ Private Sub txtNotes_LostFocus()
     
 End Sub
 
-Private Sub txtNotes_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtNotes_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 Const WM_NCLBUTTONDOWN = &HA1
 Const HTCAPTION = 2
     
@@ -4666,7 +4620,7 @@ Private Sub myWndProc(ByVal bBefore As Boolean, ByRef bHandled As Boolean, ByRef
                     
                     RtlMoveMemory mmi, ByVal lParam, Len(mmi)  ' get suggested min/max data
                     
-                    mmi.ptMinTrackSize.x = lMinWidth        ' set our min, unmaximized, size
+                    mmi.ptMinTrackSize.X = lMinWidth        ' set our min, unmaximized, size
                     mmi.ptMinTrackSize.Y = lMinHeight
                     
                     RtlMoveMemory ByVal lParam, mmi, Len(mmi)  ' override

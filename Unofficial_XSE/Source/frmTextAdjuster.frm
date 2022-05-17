@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form frmTextAdjuster 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Text Adjuster"
-   ClientHeight    =   2355
+   ClientHeight    =   3420
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   5415
@@ -18,10 +18,9 @@ Begin VB.Form frmTextAdjuster
    Icon            =   "frmTextAdjuster.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   LockControls    =   -1  'True
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   157
+   ScaleHeight     =   228
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   361
    ShowInTaskbar   =   0   'False
@@ -38,12 +37,12 @@ Begin VB.Form frmTextAdjuster
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   270
+      Height          =   330
       Left            =   4800
       MaxLength       =   2
       TabIndex        =   6
-      Text            =   "34"
-      Top             =   1965
+      Text            =   "18"
+      Top             =   3000
       Width           =   495
    End
    Begin VB.PictureBox picLine 
@@ -76,7 +75,7 @@ Begin VB.Form frmTextAdjuster
       Left            =   120
       TabIndex        =   2
       Tag             =   "7001"
-      Top             =   1920
+      Top             =   3000
       Width           =   1215
    End
    Begin VB.CommandButton cmdConvert 
@@ -86,7 +85,7 @@ Begin VB.Form frmTextAdjuster
       Left            =   2760
       TabIndex        =   4
       Tag             =   "7003"
-      Top             =   1920
+      Top             =   3000
       Width           =   1215
    End
    Begin VB.CommandButton cmdInsert 
@@ -96,7 +95,7 @@ Begin VB.Form frmTextAdjuster
       Left            =   1440
       TabIndex        =   3
       Tag             =   "7002"
-      Top             =   1920
+      Top             =   3000
       Width           =   1215
    End
    Begin VB.TextBox txtSapp 
@@ -110,9 +109,10 @@ Begin VB.Form frmTextAdjuster
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H80000011&
-      Height          =   285
+      Height          =   1245
       Left            =   120
       Locked          =   -1  'True
+      MultiLine       =   -1  'True
       TabIndex        =   1
       Top             =   1560
       Width           =   5175
@@ -129,14 +129,14 @@ Begin VB.Form frmTextAdjuster
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H0000C000&
-      Height          =   270
+      Height          =   330
       Left            =   4080
       Locked          =   -1  'True
       MaxLength       =   2
       TabIndex        =   5
       TabStop         =   0   'False
       Text            =   "0"
-      Top             =   1965
+      Top             =   3000
       Width           =   495
    End
    Begin VB.TextBox txtToAdjust 
@@ -162,10 +162,10 @@ Begin VB.Form frmTextAdjuster
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "/"
-      Height          =   195
+      Height          =   315
       Left            =   4665
       TabIndex        =   7
-      Top             =   1995
+      Top             =   3000
       Width           =   60
    End
    Begin VB.Menu mnuCustomPopup 
@@ -276,9 +276,9 @@ Dim i As Long
 End Sub
 
 Private Sub cmdConvert_Click()
-Const sNewLine As String = "\n"
-Const sNewParagraph As String = "\l"
-Const sNewPage As String = "\p"
+Const sNewLine As String = vbNewLine & vbTab & "line "
+Const sNewParagraph As String = vbNewLine & vbTab & "cont "
+Const sNewPage As String = vbNewLine & vbTab & "para "
 Dim sArray() As String, sArray2() As String
 Dim i As Long
 Dim j As Long
@@ -296,11 +296,16 @@ Dim cString As cStringBuilder
     
     SplitB sTemp, sArray(), vbNewLine & vbNewLine
     
-    cString.Append "= "
-
+    cString.Append (vbTab & "text ")
+    
     For i = LBound(sArray) To UBound(sArray)
         If InStrB(1, sArray(i), vbNewLine, vbBinaryCompare) <> 0 Then
             SplitB sArray(i), sArray2(), vbNewLine
+            
+            For j = LBound(sArray2) To UBound(sArray2)
+                sArray2(j) = """" & sArray2(j) & """"
+            Next j
+            
             If UBound(sArray2) = 1 Then
                 cString.Append sArray2(LBound(sArray2)) & sNewLine
                 cString.Append sArray2(UBound(sArray2)) & sNewPage
@@ -319,7 +324,8 @@ Dim cString As cStringBuilder
     Erase sArray
     Erase sArray2
     
-    cString.Remove cString.Length - 2, 2
+    cString.Remove cString.Length - 5, 5
+    cString.Append ("done" & vbNewLine)
     
     If cString.Length > 1024 Then
         cString.Remove 1024, cString.Length - 1024
@@ -362,7 +368,7 @@ Private Sub Form_Load()
     
     Localize Me
     
-    lMaxCount = ReadIniString(App.Path & IniFile, "TextAdjuster", "TextLimit", 34)
+    lMaxCount = ReadIniString(App.Path & IniFile, "TextAdjuster", "TextLimit", 18)
     txtMaxCount.text = lMaxCount
     picLine.Left = lMaxCount * 7 + 16
     
@@ -416,7 +422,7 @@ Private Sub txtCharCount_GotFocus()
     SendMessage txtCharCount.hWnd, WM_KILLFOCUS, 0&, ByVal 0&
 End Sub
 
-Private Sub txtCharCount_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtCharCount_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     txtCharCount.SelLength = 0
 End Sub
 
@@ -599,7 +605,7 @@ Dim i As Long
         If Not PastedText Then
             txtToAdjust.SelStart = lNewSelStart
         Else
-            txtToAdjust.SelStart = Len(txtToAdjust.text)
+            txtToAdjust.SelStart = lNewSelStart 'txtToAdjust.SelStart = Len(txtToAdjust.text)
             PastedText = False
         End If
         
@@ -773,11 +779,11 @@ Dim tmpString As String
         
 End Sub
 
-Private Sub txtToAdjust_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtToAdjust_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     GetLineLen
 End Sub
 
-Private Sub txtToAdjust_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtToAdjust_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     GetLineLen
 End Sub
 

@@ -1,0 +1,140 @@
+[
+	{
+		"name":"scall",
+		"desc":"Calls a script from the same bank",
+		"params":[
+			{
+				"desc":"Pointer"
+			}
+		]
+	},
+	{
+		"name":"sjump",
+		"desc":"Jumps to another script from the same bank",
+		"params":[
+			{
+				"desc":"Pointer"
+			}
+		]
+	},
+	{
+		"name":"farscall",
+		"desc":"Calls a script from a different bank",
+		"params":[
+			{
+				"desc":"Pointer"
+			}
+		]
+	},
+	{
+		"name":"farsjump",
+		"desc":"Jumps to another script from a different bank",
+		"params":[
+			{
+				"desc":"Pointer"
+			}
+		]
+	},
+	{
+		"name":"ifequal",
+		"desc":"Checks if value in POINTER == VALUE",
+		"params":[
+			{
+				"desc":"Value to check for"
+			},
+			{
+				"desc":"Memory address to check"
+			}
+		]
+	},
+	{
+		"name":"ifnotequal",
+		"desc":"Checks if value in POINTER != VALUE",
+		"params":[
+			{
+				"desc":"Value to check for"
+			},
+			{
+				"desc":"Memory address to check"
+			}
+		]
+	},
+	{
+		"name":"iftrue",
+		"desc":"Checks if value in POINTER is equal to 1",
+		"params":[
+			{
+				"desc":"Memory address to check"
+			}
+		]
+	},
+	{
+		"name":"iffalse",
+		"desc":"Checks if value in POINTER is equal to 0",
+		"params":[
+			{
+				"desc":"Memory address to check"
+			}
+		]
+	},
+	{
+		"name":"ifgreater",
+		"desc":"Checks if value in POINTER > VALUE",
+		"params":[
+			{
+				"desc":"Value to check for"
+			},
+			{
+				"desc":"Memory address to check"
+			}
+		]
+	},
+	{
+		"name":"ifless",
+		"desc":"Checks if value in POINTER < VALUE",
+		"params":[
+			{
+				"desc":"Value to check for"
+			},
+			{
+				"desc":"Memory address to check"
+			}
+		]
+	},
+	{
+		"name":"jumpstd",
+		"desc":"Jumps to a predefined script",
+		"params":[
+			{
+				"desc":"Predefined script name"
+			}
+		]
+	},
+	{
+		"name":"callstd",
+		"desc":"Calls a predefined script",
+		"params":[
+			{
+				"desc":"Predefined script name"
+			}
+		]
+	},
+	{
+		"name":"callasm",
+		"desc":"Calls custom assembly code",
+		"params":[
+			{
+				"desc":"Location of assembly code"
+			}
+		]
+	},
+	{
+		"name":"special",
+		"desc":"Calls a special event",
+		"params":[
+			{
+				"desc":"Name of special event"
+			}
+		]
+	}
+]

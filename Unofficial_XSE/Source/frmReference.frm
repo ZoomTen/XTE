@@ -31,22 +31,13 @@ Begin VB.Form frmReference
    Tag             =   "12000"
    Begin VB.ComboBox cboList 
       Height          =   315
+      ItemData        =   "frmReference.frx":000C
       Left            =   3480
+      List            =   "frmReference.frx":000E
       TabIndex        =   3
       Text            =   "<cmd>"
       Top             =   240
       Width           =   1695
-   End
-   Begin VB.Label lblNeededBytes 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "<needed bytes>"
-      Height          =   195
-      Left            =   240
-      TabIndex        =   4
-      Top             =   1080
-      Width           =   4695
-      WordWrap        =   -1  'True
    End
    Begin VB.Label lblParams 
       AutoSize        =   -1  'True
@@ -55,7 +46,7 @@ Begin VB.Form frmReference
       Height          =   195
       Left            =   240
       TabIndex        =   2
-      Top             =   1320
+      Top             =   1080
       Width           =   4695
       WordWrap        =   -1  'True
    End
@@ -139,9 +130,8 @@ Public Sub ResizeMe()
     cboList.Left = ScaleWidth - 16 - cboList.Width
     lblCommand.Width = Shape1.Width - 16
     lblDescription.Width = Shape1.Width - 16
-    lblNeededBytes.Top = Line2.Y1 + 8
     lblParams.Width = Shape1.Width - 16
-    lblParams.Top = lblNeededBytes.Top + 16
+    lblParams.Top = lblDescription.Top + 32
     Shape1.Height = lblParams.Top + lblParams.Height + 8
     Height = (Shape1.Height + 40) * Screen.TwipsPerPixelY
 End Sub
@@ -176,16 +166,15 @@ Dim sList As String
         For i = LBound(RubiCommands) To UBound(RubiCommands)
             If LenB(sList) = LenB(RubiCommands(i).Keyword) Then
                 If sList = RubiCommands(i).Keyword Then
-                  lblCommand.Caption = "0x" & Right$("0" & Hex$(i), 2) & " - " & RubiCommands(i).Keyword
+                  lblCommand.Caption = RubiCommands(i).Keyword
                   lblDescription.Caption = RubiCommands(i).Description
-                  lblNeededBytes.Caption = LoadResString(12001) & RubiCommands(i).NeededBytes
                   If RubiCommands(i).ParamCount = 0 Then
                     lblParams.Caption = LoadResString(12002)
                   Else
                     lblParams.Caption = LoadResString(12003)
                     For j = 0 To RubiCommands(i).ParamCount - 1
                       lblParams.Caption = frmReference.lblParams & vbNewLine & _
-                                " › " & GetSizeName(RubiParams(i, j).SIZE) & " - " & _
+                                " › " & _
                                 RubiParams(i, j).Description
                     Next j
                   End If
@@ -195,69 +184,67 @@ Dim sList As String
         Next i
   
     ElseIf cboList.ListIndex > &HE3 Then
-        
-        lblNeededBytes.Caption = LoadResString(12001)
         lblParams.Caption = LoadResString(12003) & vbNewLine
         
         Select Case cboList.ListIndex
-            Case &HE4
-                lblCommand.Caption = "msgbox, message"
-                lblDescription.Caption = "Loads a pointer into memory to display a message later on."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 8
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&HF, 1).SIZE) & " - " & _
-                                    RubiParams(&HF, 1).Description & vbNewLine & _
-                                    " › " & GetSizeName(0) & " - Message type"
-            Case &HE5
-                lblCommand.Caption = sList 'giveitem
-                lblDescription.Caption = "Gives a specified item and displays an aftermath message of the player receiving the item."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 12
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H44, 0).SIZE) & " - " & _
-                                    RubiParams(&H44, 0).Description & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H44, 1).SIZE) & " - " & _
-                                    RubiParams(&H44, 1).Description & vbNewLine & _
-                                    " › " & GetSizeName(0) & " - Message type"
-            Case &HE6
-                lblCommand.Caption = sList 'giveitem2
-                lblDescription.Caption = "Similar to giveitem except it plays a fanfare too."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 17
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H44, 0).SIZE) & " - " & _
-                                    RubiParams(&H44, 0).Description & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H44, 1).SIZE) & " - " & _
-                                    RubiParams(&H44, 1).Description & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H31, 0).SIZE) & " - " & _
-                                    RubiParams(&H31, 0).Description
-            Case &HE7
-                lblCommand.Caption = sList 'giveitem3
-                lblDescription.Caption = "Gives the player a specified decoration and displays a related message."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 7
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H4B, 0).SIZE) & " - " & _
-                                    RubiParams(&H4B, 0).Description
-            Case &HE8
-                lblCommand.Caption = sList 'wildbattle
-                lblDescription.Caption = "Starts a wild Pokémon battle."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 7
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H79, 0).SIZE) & " - " & _
-                                    "Pokémon species to battle" & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H79, 1).SIZE) & " - " & _
-                                    RubiParams(&H79, 1).Description & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H79, 2).SIZE) & " - " & _
-                                    RubiParams(&H79, 2).Description
-            Case &HE9
-                lblCommand.Caption = sList 'wildbattle2
-                lblDescription.Caption = "Starts a wild battle using a specific graphic style."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 10
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H79, 0).SIZE) & " - " & _
-                                    "Pokémon species to battle" & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H79, 1).SIZE) & " - " & _
-                                    RubiParams(&H79, 1).Description & vbNewLine & _
-                                    " › " & GetSizeName(RubiParams(&H79, 2).SIZE) & " - " & _
-                                    RubiParams(&H79, 2).Description & vbNewLine & _
-                                    " › " & GetSizeName(0) & " - Battle style"
-            Case &HEA
-                lblCommand.Caption = sList 'registernav
-                lblDescription.Caption = "Register the specified trainer in the PokéNav. Emerald only."
-                lblNeededBytes.Caption = lblNeededBytes.Caption & 7
-                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(1) & " - Trainer ID #"
+'            Case &HE4
+'                lblCommand.Caption = "msgbox, message"
+'                lblDescription.Caption = "Loads a pointer into memory to display a message later on."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 8
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&HF, 1).SIZE) & " - " & _
+'                                    RubiParams(&HF, 1).Description & vbNewLine & _
+'                                    " › " & GetSizeName(0) & " - Message type"
+'            Case &HE5
+'                lblCommand.Caption = sList 'giveitem
+'                lblDescription.Caption = "Gives a specified item and displays an aftermath message of the player receiving the item."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 12
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H44, 0).SIZE) & " - " & _
+'                                    RubiParams(&H44, 0).Description & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H44, 1).SIZE) & " - " & _
+'                                    RubiParams(&H44, 1).Description & vbNewLine & _
+'                                    " › " & GetSizeName(0) & " - Message type"
+'            Case &HE6
+'                lblCommand.Caption = sList 'giveitem2
+'                lblDescription.Caption = "Similar to giveitem except it plays a fanfare too."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 17
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H44, 0).SIZE) & " - " & _
+'                                    RubiParams(&H44, 0).Description & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H44, 1).SIZE) & " - " & _
+'                                    RubiParams(&H44, 1).Description & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H31, 0).SIZE) & " - " & _
+'                                    RubiParams(&H31, 0).Description
+'            Case &HE7
+'                lblCommand.Caption = sList 'giveitem3
+'                lblDescription.Caption = "Gives the player a specified decoration and displays a related message."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 7
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H4B, 0).SIZE) & " - " & _
+'                                    RubiParams(&H4B, 0).Description
+'            Case &HE8
+'                lblCommand.Caption = sList 'wildbattle
+'                lblDescription.Caption = "Starts a wild Pokémon battle."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 7
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H79, 0).SIZE) & " - " & _
+'                                    "Pokémon species to battle" & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H79, 1).SIZE) & " - " & _
+'                                    RubiParams(&H79, 1).Description & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H79, 2).SIZE) & " - " & _
+'                                    RubiParams(&H79, 2).Description
+'            Case &HE9
+'                lblCommand.Caption = sList 'wildbattle2
+'                lblDescription.Caption = "Starts a wild battle using a specific graphic style."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 10
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(RubiParams(&H79, 0).SIZE) & " - " & _
+'                                    "Pokémon species to battle" & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H79, 1).SIZE) & " - " & _
+'                                    RubiParams(&H79, 1).Description & vbNewLine & _
+'                                    " › " & GetSizeName(RubiParams(&H79, 2).SIZE) & " - " & _
+'                                    RubiParams(&H79, 2).Description & vbNewLine & _
+'                                    " › " & GetSizeName(0) & " - Battle style"
+'            Case &HEA
+'                lblCommand.Caption = sList 'registernav
+'                lblDescription.Caption = "Register the specified trainer in the PokéNav. Emerald only."
+'                lblNeededBytes.Caption = lblNeededBytes.Caption & 7
+'                lblParams.Caption = lblParams.Caption & " › " & GetSizeName(1) & " - Trainer ID #"
 
         End Select
         
@@ -324,15 +311,16 @@ Dim i As Integer
         SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal RubiCommands(i).Keyword
     Next i
     
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "--------"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "msgbox"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "giveitem"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "giveitem2"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "giveitem3"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "wildbattle"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "wildbattle2"
-    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "registernav"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "--------"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "msgbox"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "giveitem"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "giveitem2"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "giveitem3"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "wildbattle"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "wildbattle2"
+'    SendMessageStr cboList.hWnd, CB_ADDSTRING, 0, ByVal "registernav"
     
     UnlockUpdate cboList.hWnd
     
 End Sub
+

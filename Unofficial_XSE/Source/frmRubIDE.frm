@@ -53,7 +53,7 @@ Begin VB.Form frmRubIDE
          Height          =   195
          Index           =   5
          Left            =   120
-         TabIndex        =   10
+         TabIndex        =   2
          Top             =   1140
          Width           =   585
       End
@@ -324,9 +324,8 @@ Begin VB.Form frmRubIDE
       BtnWidth11      =   24
       BtnHeight11     =   24
       BtnEnabled12    =   0   'False
-      BtnType12       =   1
       BeginProperty BtnFont12 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
+         Name            =   "Tahoma"
          Size            =   8.25
          Charset         =   0
          Weight          =   400
@@ -335,12 +334,9 @@ Begin VB.Form frmRubIDE
          Strikethrough   =   0   'False
       EndProperty
       BtnLeft12       =   288
-      BtnTop12        =   4
-      BtnWidth12      =   2
-      BtnHeight12     =   20
-      BtnEnabled13    =   0   'False
-      BtnIcon13       =   "frmRubIDE.frx":06B0
-      BtnToolTipText13=   "Compile"
+      BtnTop12        =   2
+      BtnWidth12      =   24
+      BtnHeight12     =   24
       BeginProperty BtnFont13 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -350,14 +346,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState13      =   5
-      BtnLeft13       =   292
+      BtnLeft13       =   314
       BtnTop13        =   2
       BtnWidth13      =   24
       BtnHeight13     =   24
-      BtnEnabled14    =   0   'False
-      BtnIcon14       =   "frmRubIDE.frx":0A02
-      BtnToolTipText14=   "Debug Script"
       BeginProperty BtnFont14 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -367,13 +359,12 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState14      =   5
-      BtnLeft14       =   318
+      BtnLeft14       =   340
       BtnTop14        =   2
       BtnWidth14      =   24
       BtnHeight14     =   24
       BtnEnabled15    =   0   'False
-      BtnIcon15       =   "frmRubIDE.frx":0D54
+      BtnIcon15       =   "frmRubIDE.frx":06B0
       BtnToolTipText15=   "Show Log"
       BtnStyle15      =   1
       BeginProperty BtnFont15 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -387,14 +378,13 @@ Begin VB.Form frmRubIDE
       EndProperty
       BtnState15      =   5
       BtnValue15      =   -1  'True
-      BtnLeft15       =   344
+      BtnLeft15       =   366
       BtnTop15        =   2
       BtnWidth15      =   24
       BtnHeight15     =   24
       BtnEnabled16    =   0   'False
-      BtnType16       =   1
       BeginProperty BtnFont16 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
+         Name            =   "Tahoma"
          Size            =   8.25
          Charset         =   0
          Weight          =   400
@@ -402,12 +392,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnLeft16       =   370
-      BtnTop16        =   4
-      BtnWidth16      =   2
-      BtnHeight16     =   20
-      BtnCaption17    =   "Offset"
-      BtnEnabled17    =   0   'False
+      BtnLeft16       =   392
+      BtnTop16        =   2
+      BtnWidth16      =   24
+      BtnHeight16     =   24
       BeginProperty BtnFont17 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -417,12 +405,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState17      =   5
-      BtnLeft17       =   374
+      BtnLeft17       =   418
       BtnTop17        =   2
-      BtnWidth17      =   39
-      BtnHeight17     =   21
-      BtnEnabled18    =   0   'False
+      BtnWidth17      =   24
+      BtnHeight17     =   24
       BeginProperty BtnFont18 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -432,12 +418,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState18      =   5
-      BtnLeft18       =   415
+      BtnLeft18       =   444
       BtnTop18        =   2
       BtnWidth18      =   24
       BtnHeight18     =   24
-      BtnEnabled19    =   0   'False
       BeginProperty BtnFont19 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -447,12 +431,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState19      =   5
-      BtnLeft19       =   441
+      BtnLeft19       =   470
       BtnTop19        =   2
       BtnWidth19      =   24
       BtnHeight19     =   24
-      BtnEnabled20    =   0   'False
       BeginProperty BtnFont20 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -462,14 +444,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState20      =   5
-      BtnLeft20       =   467
+      BtnLeft20       =   496
       BtnTop20        =   2
       BtnWidth20      =   24
       BtnHeight20     =   24
-      BtnEnabled21    =   0   'False
-      BtnIcon21       =   "frmRubIDE.frx":10A6
-      BtnToolTipText21=   "Decompile"
       BeginProperty BtnFont21 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -479,15 +457,10 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState21      =   5
-      BtnLeft21       =   493
+      BtnLeft21       =   522
       BtnTop21        =   2
       BtnWidth21      =   24
       BtnHeight21     =   24
-      BtnEnabled22    =   0   'False
-      BtnIcon22       =   "frmRubIDE.frx":13F8
-      BtnToolTipText22=   "Level Script"
-      BtnStyle22      =   1
       BeginProperty BtnFont22 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -497,35 +470,16 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      BtnState22      =   5
-      BtnLeft22       =   519
+      BtnLeft22       =   548
       BtnTop22        =   2
       BtnWidth22      =   24
       BtnHeight22     =   24
-      Begin VB.TextBox txtPrefix 
-         Enabled         =   0   'False
-         Height          =   285
-         Left            =   6380
-         TabIndex        =   11
-         Text            =   "0x"
-         Top             =   80
-         Width           =   255
-      End
-      Begin VB.TextBox txtOffset 
-         Enabled         =   0   'False
-         Height          =   285
-         Left            =   6620
-         MaxLength       =   7
-         TabIndex        =   2
-         Top             =   80
-         Width           =   870
-      End
       Begin VB.ComboBox cboFile 
          Height          =   315
          IntegralHeight  =   0   'False
-         ItemData        =   "frmRubIDE.frx":174A
+         ItemData        =   "frmRubIDE.frx":0A02
          Left            =   600
-         List            =   "frmRubIDE.frx":1754
+         List            =   "frmRubIDE.frx":0A0C
          TabIndex        =   1
          TabStop         =   0   'False
          Top             =   60
@@ -593,7 +547,6 @@ Private sPrevQuickInfo As String
 Private Const EM_SETREADONLY = &HCF&
 Private Const WM_CONTEXTMENU = &H7B&
 
-Private hexOffset As clsHexBox
 Private WithEvents cSubclasser As cSelfSubclasser
 Attribute cSubclasser.VB_VarHelpID = -1
 
@@ -762,7 +715,7 @@ Dim sResult As String
 Dim oOpenDialog As clsCommonDialog
 
     Set oOpenDialog = New clsCommonDialog
-    sResult = oOpenDialog.ShowOpen(Me.hWnd, vbNullString, , "All Supported Files (*.rbc; *.rbh; *.rbt; *.gba)|*.rbc;*.rbh;*.rbt;*.gba|Script Files (*.rbc; *.rbh; *.rbt)|*.rbc;*.rbh;*.rbt|GameBoy Advance ROMs (*.gba)|*.gba|", FileMustExist Or PATHMUSTEXIST Or HideReadOnly)
+    sResult = oOpenDialog.ShowOpen(Me.hWnd, vbNullString, , "All Supported Files (*.rbc; *.rbh; *.rbt; *.asm)|*.rbc;*.rbh;*.rbt;*.asm|Script Files (*.rbc; *.rbh; *.rbt)|*.rbc;*.rbh;*.rbt|Assembly code (*.asm)|*.asm|", FileMustExist Or PATHMUSTEXIST Or HideReadOnly)
        
     If LenB(sResult) <> 0 Then
     
@@ -772,11 +725,8 @@ Dim oOpenDialog As clsCommonDialog
                 
                 Select Case GetExt(sResult)
                 
-                    Case "rbc", "rbh", "rbt"
+                    Case "rbc", "rbh", "rbt", "asm"
                         GoTo ScriptFile
-                        
-                    Case "gba"
-                        GoTo GBAFile
                         
                 End Select
             
@@ -787,32 +737,12 @@ ScriptFile:
                 LoadedFile = sResult
                 cboFile.ListIndex = 0
                 
-                txtOffset.Enabled = False
-                'txtOffset.text = vbNullString
-                
                 Toolbar.BtnState(13) = STA_DISABLED
                 Toolbar.BtnState(14) = STA_DISABLED
                 Toolbar.BtnState(15) = STA_DISABLED
                 Toolbar.BtnState(21) = STA_DISABLED
                 
                 LoadFile
-            
-            Case 3
-            
-GBAFile:
-                FileIndex = 1
-                LoadedFile = sResult
-                cboFile.ListIndex = 1
-                
-                MakeWritable sResult
-                txtOffset.Enabled = True
-                
-                If LenB(txtCode.text) <> 0 Then
-                    Toolbar.BtnState(13) = STA_NORMAL
-                    Toolbar.BtnState(14) = STA_NORMAL
-                    Toolbar.BtnState(15) = STA_PRESSED
-                End If
-        
         End Select
         
     Else
@@ -841,37 +771,6 @@ End Sub
     
 'End Function
 
-Public Sub Compile()
-Dim iFileNum As Integer
-Dim sFileName As String
-   
-    On Error GoTo Finish
-    
-    MousePointer = vbHourglass
-    
-    iFileNum = FreeFile
-    Open sTempPath & sTempFile For Output As #iFileNum
-        Print #iFileNum, txtCode.text;
-    Close #iFileNum
-    
-    If IsDebugging = False Then
-        sFileName = LoadedFile
-    Else
-        sFileName = sTempPath & "~DebugTest.gba"
-        iFileNum = FreeFile
-        Open sFileName For Output As #iFileNum
-        Close #iFileNum
-    End If
-    
-    Process sFileName
-    
-Finish:
-    
-    If IsDebugging Then DeleteFile sFileName
-    MousePointer = vbDefault
-    IsDebugging = False
-
-End Sub
 
 Public Sub LoadFile()
 Dim i As Long
@@ -1061,25 +960,6 @@ Private Sub cboFile_LostFocus()
 End Sub
 
 Private Sub Form_Activate()
-    
-    If GetExt(LoadedFile) = "gba" Then
-        frmMain.mnuHexViewer.Enabled = True
-        frmMain.mnuExpander.Enabled = True
-    Else
-        frmMain.mnuHexViewer.Enabled = False
-        frmMain.mnuExpander.Enabled = False
-    End If
-    
-    If IsOpen("frmHexViewer") Then
-        frmHexViewer.ToggleEnable LoadedFile
-    ElseIf IsOpen("frmExpander") Then
-        frmExpander.ToggleEnable LoadedFile
-    ElseIf IsOpen("frmBatch") Then
-        If LenB(frmBatch.txtROM) = 0 Then
-            frmBatch.txtROM.text = LoadedFile
-        End If
-    End If
-    
     frmMain.mnuReadOnly.Checked = txtCode.Locked
     frmMain.mnuPrint = LenB(txtCode.text) <> 0
     frmMain.mnuUndo.Enabled = Me.CanUndo
@@ -1154,81 +1034,13 @@ Dim oOpenDialog As clsCommonDialog
                 
             Case vbKeyB
                 Browse
-                
-            Case vbKeyC
             
-                If LenB(txtCode.text) <> 0 Then
-                    
-                    If GetExt(LoadedFile) = "gba" Then
-                        Compile
-                    End If
-                    
-                End If
-                
-            Case vbKeyD
-            
-                If Len(txtOffset.text) >= 6 And IsHex(txtOffset.text) Then
-                    If LenB(LoadedFile) <> 0 Then
-                        If Len(txtOffset.text) >= 6 And IsHex(txtOffset.text) Then
-                            Decompile LoadedFile, CLng("&H" & txtOffset.text)
-                        End If
-                    End If
-                End If
-                
             Case vbKeyF
             
                 If LenB(LoadedFile) <> 0 Then
                     ShellExecute hWnd, "open", GetPath(LoadedFile), vbNullString, vbNullString, vbNormalFocus
                 End If
-                
-            Case vbKeyG
-                
-                If LenB(txtCode.text) <> 0 Then
-                    IsDebugging = True
-                    Compile
-                End If
-                
-            Case vbKeyH
             
-                If txtCode.SelLength >= 6 Then
-                    If txtCode.SelLength <= 7 Then
-                    
-                        sTemp = txtCode.SelText
-                        
-                        If IsHex(sTemp) Then
-                            
-                            If IsPtr("&H" & sTemp) Then
-                                sTemp = Hex$(CLng("&H" & sTemp) - &H8000000)
-                            End If
-                            
-                            frmHexViewer.txtOffset.text = sTemp
-                            Show2 frmHexViewer, frmMain, CBool(frmMain.mnuAlwaysonTop.Checked)
-                            frmHexViewer.cmdGo_Click
-                            
-                        End If
-                    End If
-                End If
-                
-            Case vbKeyL
-                
-                If IsOpen("frmOutput") Then
-                    If LenB(frmOutput.txtOutput) <> 0 Then
-                        frmOutput.Show , frmMain
-                    End If
-                End If
-            'Case vbKeyN
-            '    If LenB(LoadedFile) <> 0 Then
-            '        If Len(txtOffset.text) >= 6 And IsHex(txtOffset.text) Then
-            '            i = Decompile(LoadedFile, CLng("&H" & txtOffset.text), True)
-            '            If i <> 0 Then
-            '                SetStatusText LoadResString(12001) & (i - CLng("&H" & txtOffset.text))
-            '            End If
-            '        End If
-            '    End If
-            Case vbKeyO
-                If txtOffset.Enabled Then
-                    txtOffset.SetFocus
-                End If
             Case vbKeyR
                 If GetExt(LoadedFile) = "gba" Then
                     SetTopmostWindow frmMain.hWnd, False
@@ -1267,19 +1079,7 @@ Dim oOpenDialog As clsCommonDialog
         KeyCode = 0
         Exit Sub
     End If
-    
-  If Shift = vbCtrlMask + vbAltMask Then
-    
-    If KeyCode = vbKeyR Then
-        iRefactoring = -CInt(Not CBool(iRefactoring))
-        WriteStringToIni App.Path & IniFile, "Options", "Refactoring", iRefactoring
-    End If
-    
-    KeyCode = 0
-    Exit Sub
-    
-  End If
-  
+
   If Shift = vbCtrlMask Then
     Select Case KeyCode
         Case vbKeyAdd
@@ -1391,24 +1191,13 @@ Dim iLength As Integer
     
     If iLength <= 18 Then
         cboFile.Left = 600
-        txtPrefix.Left = 6380
     Else
         cboFile.Left = Int(600 + (iLength - 18) * 10 + iLength)
-        txtPrefix.Left = Int(cboFile.Left + 5780 + (iLength * 2))
     End If
-    
-    txtOffset.Left = txtPrefix.Left + 240
     
     Toolbar.BtnToolTipText(10) = LoadResString(13034)
     Toolbar.BtnToolTipText(11) = LoadResString(13035)
-    Toolbar.BtnToolTipText(13) = LoadResString(13036)
-    Toolbar.BtnToolTipText(14) = LoadResString(13043)
     Toolbar.BtnToolTipText(15) = LoadResString(13037)
-    Toolbar.BtnCaption(17) = LoadResString(13038)
-    Toolbar.BtnToolTipText(21) = LoadResString(13039)
-    Toolbar.BtnToolTipText(22) = LoadResString(13040)
-    
-'    Toolbar.BtnToolTipText(23) = LoadResString(13041)
     
 End Sub
 
@@ -1506,9 +1295,6 @@ Dim hWndEdit As Long
     
     Me.Move -Screen.Width, -Screen.Height, Me.Width, Me.Height
     
-    ' Multicast the offset TextBox
-    Set hexOffset = New clsHexBox
-    Set hexOffset.TextBox = txtOffset
         
     If colStack Is Nothing Then
         Set colStack = New Collection
@@ -1606,28 +1392,6 @@ Private Sub Toolbar_ButtonClick(btnIndex As Long, sKey As String, iLeft As Integ
             Browse
         Case 11
             frmMain.mnuSave_Click
-        Case 13
-            Compile
-        Case 14
-            IsDebugging = True
-            Compile
-        Case 15
-            NoLog = Not NoLog
-            Toolbar.BtnValue(15) = Not NoLog
-        Case 21
-            Toolbar.BtnState(21) = STA_DISABLED
-            Toolbar.BtnState(21) = STA_NORMAL
-            Decompile LoadedFile, CLng("&H" & txtOffset.text)
-        Case 22
-            IsLevelScript = Not IsLevelScript
-            Toolbar.BtnValue(22) = Not Toolbar.BtnValue(22)
-            
-'        Case 23
-'            Japanese = Not Toolbar.BtnValue(23)
-'            Toolbar.BtnValue(23) = Not Toolbar.BtnValue(23)
-'            If LenB(txtCode.text) <> 0 Then
-'                Decompile
-'            End If
         End Select
         
 End Sub
@@ -1679,13 +1443,6 @@ Public Sub txtCode_Change()
             End Select
             
         End If
-        
-        If NoLog = True Then
-            Toolbar.BtnState(15) = STA_NORMAL
-        Else
-            Toolbar.BtnState(15) = STA_PRESSED
-        End If
-        
     Else
         
         IsDirty = False
@@ -1865,14 +1622,6 @@ Private Sub txtCode_GotFocus()
     
     HasFocus = True
     
-    If LenB(txtCode.text) <> 0 Then
-        If NoLog = True Then
-            Toolbar.BtnState(15) = STA_NORMAL
-        Else
-            Toolbar.BtnState(15) = STA_PRESSED
-        End If
-    End If
-    
 End Sub
 
 Private Sub txtCode_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -1910,12 +1659,28 @@ Dim lCurLine As Long
         
             If InStr(1, sCurLine, vbSpace) <> 1 Then
                 
-                SplitB sCurLine, sArray, vbSpace
+                Dim txtRE As RegExp
+                Dim txtMatches As MatchCollection
+                Dim txtMatch As Match
+                
+                Set txtRE = New RegExp
+                txtRE.Pattern = "(\s?\w+|\"".+\"")\s?"
+                txtRE.Global = True
+                txtRE.IgnoreCase = True
+                
+                Set txtMatches = txtRE.Execute(sCurLine)
+                
+                ReDim sArray(txtMatches.Count) As String
+                
+                For i = 0 To txtMatches.Count - 1
+                    sArray(i) = txtMatches.Item(i)
+                Next i
+                
+                ' SplitB sCurLine, sArray, vbSpace
                 
                 If UBound(sArray) > 0 Then
-                
                     sArray(0) = Replace$(LCase$(sArray(0)), vbTab, "")
-                    
+                    sArray(0) = Trim$(sArray(0))
                     If LenB(sPrevQuickInfo) <> 0 Then
                         If sPrevQuickInfo <> sArray(0) Then
                             If KeyCode <> vbKeySpace Then
@@ -2121,9 +1886,9 @@ Dim lCurLine As Long
                                 GetCaretPos lpPoint
                                 
                                 If lpPoint.Y + txtCode.FontSize * 2 + lParamCount * (lblParams(0).Height + 1) + 12 <= txtCode.Height Then
-                                    picQuickInfo.Move lpPoint.x, txtCode.Top + lpPoint.Y + txtCode.FontSize * 2, lMaxWidth + 16, lParamCount * (lblParams(0).Height + 1) + 12
+                                    picQuickInfo.Move lpPoint.X, txtCode.Top + lpPoint.Y + txtCode.FontSize * 2, lMaxWidth + 16, lParamCount * (lblParams(0).Height + 1) + 12
                                 Else
-                                    picQuickInfo.Move lpPoint.x, lpPoint.Y + txtCode.FontSize * 2 - lParamCount * (lblParams(0).Height + 1) + 12, lMaxWidth + 16, lParamCount * (lblParams(0).Height + 1) + 12
+                                    picQuickInfo.Move lpPoint.X, lpPoint.Y + txtCode.FontSize * 2 - lParamCount * (lblParams(0).Height + 1) + 12, lMaxWidth + 16, lParamCount * (lblParams(0).Height + 1) + 12
                                 End If
                                 
                                 If frmMain.mnuLineNumbers.Checked = True Then
@@ -2209,7 +1974,7 @@ Private Function IsPtr(ByVal lOffset As Long) As Boolean
     IsPtr = (lOffset And &HFF000000) >= &H8000000 And (lOffset And &HFF000000) <= &H9000000
 End Function
 
-Private Sub txtCode_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtCode_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim sTemp As String
 Dim sBuffer As String
 Dim lLineIndex As Long
@@ -2346,7 +2111,7 @@ Dim i As Long
     
 End Sub
 
-Private Sub txtCode_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtCode_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     
     If GetActiveWindow = frmMain.hWnd Then
         
@@ -2360,11 +2125,11 @@ Private Sub txtCode_MouseMove(Button As Integer, Shift As Integer, x As Single, 
     
 End Sub
 
-Private Sub txtCode_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtCode_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     frmMain.StatusBar.PanelCaption(2) = GetCount(txtCode)
 End Sub
 
-Private Sub txtCode_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub txtCode_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single)
    
     If Data.GetFormat(vbCFFiles) Then
     
@@ -2400,169 +2165,51 @@ Private Sub cboFile_Click()
     m_FileIndex = cboFile.ListIndex
     cboFile.ToolTipText = GetFileName(LoadedFile)
     
-    If GetExt(LoadedFile) = "gba" Then
+    Toolbar.BtnState(13) = STA_DISABLED
+    
+    If LenB(LoadedFile) <> 0 Then
         
-        txtOffset.Enabled = True
-        frmMain.mnuSave.Enabled = False
         frmMain.mnuBackup.Enabled = True
-        frmMain.mnuHexViewer.Enabled = True
-        frmMain.mnuExpander.Enabled = True
         
-        If FileLength(LoadedFile) <= &H1000000 Then
-            txtOffset.MaxLength = 6
-            txtOffset.text = Left$(txtOffset.text, 6)
-        Else
-            txtOffset.MaxLength = 7
+        If IsDirty Then
+            frmMain.mnuRevert.Enabled = True
         End If
         
         If LenB(txtCode.text) <> 0 Then
             
-            Toolbar.BtnState(11) = STA_NORMAL
-            Toolbar.BtnState(13) = STA_NORMAL
+            If IsDirty Then
+                Toolbar.BtnState(11) = STA_NORMAL
+            Else
+                Toolbar.BtnState(11) = STA_DISABLED
+            End If
+            
             Toolbar.BtnState(14) = STA_NORMAL
             
-            If NoLog = True Then
-                Toolbar.BtnState(15) = STA_NORMAL
-            Else
-                Toolbar.BtnState(15) = STA_PRESSED
-            End If
-        
-        End If
-        
-        If IsOpen("frmBatch") Then
-            If LenB(frmBatch.txtROM) = 0 Then
-                frmBatch.txtROM.text = LoadedFile
-            End If
-        End If
-        
-    Else
-    
-        txtOffset.Enabled = False
-        'txtOffset.text = vbNullString
-        frmMain.mnuHexViewer.Enabled = False
-        frmMain.mnuExpander.Enabled = False
-        
-        Toolbar.BtnState(13) = STA_DISABLED
-        
-        If LenB(LoadedFile) <> 0 Then
-            
-            frmMain.mnuBackup.Enabled = True
-            
-            If IsDirty Then
-                frmMain.mnuRevert.Enabled = True
-            End If
-            
-            If LenB(txtCode.text) <> 0 Then
-                
-                If IsDirty Then
-                    Toolbar.BtnState(11) = STA_NORMAL
-                Else
-                    Toolbar.BtnState(11) = STA_DISABLED
-                End If
-                
-                Toolbar.BtnState(14) = STA_NORMAL
-                
-                If NoLog = True Then
-                    Toolbar.BtnState(15) = STA_NORMAL
-                Else
-                    Toolbar.BtnState(15) = STA_PRESSED
-                End If
-                
-            Else
-                Toolbar.BtnState(11) = STA_DISABLED
-                Toolbar.BtnState(14) = STA_DISABLED
-                Toolbar.BtnState(15) = STA_DISABLED
-            End If
-            
         Else
+            Toolbar.BtnState(11) = STA_DISABLED
+            Toolbar.BtnState(14) = STA_DISABLED
+            Toolbar.BtnState(15) = STA_DISABLED
+        End If
+        
+    Else
+        
+        frmMain.mnuBackup.Enabled = False
+        frmMain.mnuRevert.Enabled = False
+        
+        If LenB(txtCode.text) <> 0 Then
+            Toolbar.BtnState(11) = STA_NORMAL
+            Toolbar.BtnState(14) = STA_NORMAL
             
-            frmMain.mnuBackup.Enabled = False
-            frmMain.mnuRevert.Enabled = False
-            
-            If LenB(txtCode.text) <> 0 Then
-                Toolbar.BtnState(11) = STA_NORMAL
-                Toolbar.BtnState(14) = STA_NORMAL
-                
-                If NoLog = True Then
-                    Toolbar.BtnState(15) = STA_NORMAL
-                Else
-                    Toolbar.BtnState(15) = STA_PRESSED
-                End If
 
-            Else
-                Toolbar.BtnState(11) = STA_DISABLED
-                Toolbar.BtnState(14) = STA_DISABLED
-                Toolbar.BtnState(15) = STA_DISABLED
-            End If
-            
+        Else
+            Toolbar.BtnState(11) = STA_DISABLED
+            Toolbar.BtnState(14) = STA_DISABLED
+            Toolbar.BtnState(15) = STA_DISABLED
         End If
         
     End If
-    
-    txtOffset_Change
-    
-    If IsOpen("frmHexViewer") Then
-        frmHexViewer.ToggleEnable LoadedFile
-    ElseIf IsOpen("frmExpander") Then
-        frmExpander.ToggleEnable LoadedFile
-    End If
-    
 End Sub
 
-Private Sub txtOffset_Change()
-    
-    If FileLength(LoadedFile) <= &H1000000 Then
-        txtOffset.MaxLength = 6
-        txtOffset.text = Left$(txtOffset.text, 6)
-    Else
-        txtOffset.MaxLength = 7
-    End If
-    
-    If Len(txtOffset.text) >= 6 Then
-        If IsHex(txtOffset.text) Then
-                
-            If GetExt(LoadedFile) = "gba" Then
-            
-                Toolbar.BtnState(21) = STA_NORMAL
-                
-                If IsLevelScript Then
-                    Toolbar.BtnState(22) = STA_PRESSED
-                Else
-                    Toolbar.BtnState(22) = STA_NORMAL
-                End If
-                
-            Else
-                Toolbar.BtnState(21) = STA_DISABLED
-                Toolbar.BtnState(22) = STA_DISABLED
-            End If
-                
-        End If
-    Else
-        Toolbar.BtnState(21) = STA_DISABLED
-        Toolbar.BtnState(22) = STA_DISABLED
-'        Toolbar.BtnState(23) = STA_DISABLED
-    End If
-    
-End Sub
-
-Private Sub txtOffset_GotFocus()
-    HasFocus = True
-End Sub
-
-Private Sub txtOffset_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then
-        If LenB(txtOffset.text) <> 0 And GetExt(LoadedFile) = "gba" Then
-            If Len(txtOffset.text) >= 6 And IsHex(txtOffset.text) Then
-                KeyCode = 0
-                Decompile LoadedFile, CLng("&H" & txtOffset.text)
-            End If
-        End If
-    End If
-End Sub
-
-Private Sub txtOffset_LostFocus()
-    HasFocus = False
-End Sub
 
 '- ordinal #1
 Private Sub myWndProc(ByVal bBefore As Boolean, ByRef bHandled As Boolean, ByRef lReturn As Long, ByVal lng_hWnd As Long, ByVal uMsg As Long, ByVal wParam As Long, ByVal lParam As Long, ByRef lParamUser As Long)
