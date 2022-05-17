@@ -5,4 +5,4 @@ This is a modification of an ancient but beloved script editing tool such that i
 
 It doesn't even have syntax highlighting but hey, it comes with a space for notes and a calculator.
 
-Thanks to [Hacker2020](https://github.com/hacker2020) for preserving the source code.
+Thanks to [Gamer2020](https://github.com/gamer2020) for preserving the source code.
