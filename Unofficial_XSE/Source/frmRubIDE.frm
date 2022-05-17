@@ -527,6 +527,7 @@ Begin VB.Form frmRubIDE
          Left            =   600
          List            =   "frmRubIDE.frx":1754
          TabIndex        =   1
+         TabStop         =   0   'False
          Top             =   60
          Width           =   3015
       End
@@ -548,6 +549,7 @@ Begin VB.Form frmRubIDE
       OLEDropMode     =   1  'Manual
       ScrollBars      =   3  'Both
       TabIndex        =   0
+      TabStop         =   0   'False
       Top             =   600
       Width           =   8790
    End
@@ -1912,7 +1914,7 @@ Dim lCurLine As Long
                 
                 If UBound(sArray) > 0 Then
                 
-                    sArray(0) = LCase$(sArray(0))
+                    sArray(0) = Replace$(LCase$(sArray(0)), vbTab, "")
                     
                     If LenB(sPrevQuickInfo) <> 0 Then
                         If sPrevQuickInfo <> sArray(0) Then
