@@ -3751,18 +3751,18 @@ Dim i As Long
         ' See if we have command-line arguments.
         If LenB(Command$) <> 0 Then
 
-'            ' Clear any existing DDE link.
-'            txtCommandLine.LinkMode = vbLinkNone
-'
-'            ' Define link to source.
-'            txtCommandLine.LinkTopic = App.Title & "|" & Me.LinkTopic
-'
-'            ' Establish manual link.
-'            txtCommandLine.LinkMode = vbLinkManual
-'
-'            ' Push the command-line arguments
-'            txtCommandLine.text = Command$
-'            txtCommandLine.LinkPoke
+            ' Clear any existing DDE link.
+            txtCommandLine.LinkMode = vbLinkNone
+
+            ' Define link to source.
+            txtCommandLine.LinkTopic = App.Title & "|" & Me.LinkTopic
+
+            ' Establish manual link.
+            txtCommandLine.LinkMode = vbLinkManual
+
+            ' Push the command-line arguments
+            txtCommandLine.text = Command$
+            txtCommandLine.LinkPoke
             
             txtCommandLine.text = Command$
             WriteToPrevInstance txtCommandLine.text, sCaption
