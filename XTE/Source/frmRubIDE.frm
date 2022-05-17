@@ -30,13 +30,13 @@ Begin VB.Form frmRubIDE
    Begin VB.PictureBox picQuickInfo 
       BackColor       =   &H80000018&
       BorderStyle     =   0  'None
-      Height          =   1440
+      Height          =   2040
       Left            =   6690
-      ScaleHeight     =   96
+      ScaleHeight     =   136
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   101
       TabIndex        =   4
-      Top             =   3300
+      Top             =   2580
       Visible         =   0   'False
       Width           =   1515
       Begin VB.Timer tmrQuickInfo 
@@ -44,6 +44,42 @@ Begin VB.Form frmRubIDE
          Interval        =   60000
          Left            =   960
          Top             =   840
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 9"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   8
+         Left            =   120
+         TabIndex        =   12
+         Top             =   1770
+         Width           =   585
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 8"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   7
+         Left            =   120
+         TabIndex        =   11
+         Top             =   1560
+         Width           =   585
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 7"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   6
+         Left            =   120
+         TabIndex        =   10
+         Top             =   1350
+         Width           =   585
       End
       Begin VB.Label lblParams 
          AutoSize        =   -1  'True
@@ -137,9 +173,9 @@ Begin VB.Form frmRubIDE
          BackColor       =   &H80000008&
          BorderColor     =   &H80000011&
          FillColor       =   &H80000008&
-         Height          =   1410
-         Left            =   15
-         Top             =   15
+         Height          =   2010
+         Left            =   0
+         Top             =   0
          Width           =   1485
       End
    End
@@ -291,7 +327,7 @@ Begin VB.Form frmRubIDE
       BtnWidth9       =   24
       BtnHeight9      =   24
       BtnEnabled10    =   0   'False
-      BtnIcon10       =   "frmRubIDE.frx":000C
+      BtnIcon10       =   "frmRubIDE.frx":3332
       BtnToolTipText10=   "Open..."
       BeginProperty BtnFont10 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
@@ -307,7 +343,7 @@ Begin VB.Form frmRubIDE
       BtnWidth10      =   24
       BtnHeight10     =   24
       BtnEnabled11    =   0   'False
-      BtnIcon11       =   "frmRubIDE.frx":035E
+      BtnIcon11       =   "frmRubIDE.frx":3684
       BtnToolTipText11=   "Save Script"
       BeginProperty BtnFont11 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
@@ -326,9 +362,9 @@ Begin VB.Form frmRubIDE
       Begin VB.ComboBox cboFile 
          Height          =   315
          IntegralHeight  =   0   'False
-         ItemData        =   "frmRubIDE.frx":06B0
+         ItemData        =   "frmRubIDE.frx":39D6
          Left            =   600
-         List            =   "frmRubIDE.frx":06BA
+         List            =   "frmRubIDE.frx":39E0
          TabIndex        =   1
          TabStop         =   0   'False
          Top             =   60
@@ -1736,7 +1772,7 @@ Dim lCurLine As Long
                                 End If
                                 
                                 picQuickInfo.Visible = True
-                                tmrQuickInfo.Interval = 10000& * lParamCount
+                                tmrQuickInfo.Interval = 5000& * lParamCount
                                 tmrQuickInfo.Enabled = True
                                 
                                 sPrevQuickInfo = sArray(0)

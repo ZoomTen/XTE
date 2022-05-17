@@ -174,14 +174,17 @@ Dim j As Integer
     bDatabase = LoadResData(101, "cmddb")
     sTempPath = GetTempDir
     
+    Dim numOfCommands As Integer
+    
+    ' XXX: Change this whenever commands.bin changes
+    numOfCommands = 14
+    
     iFileNum = FreeFile
     Open sTempPath & "command.dat" For Binary As #iFileNum
-        Debug.Print sTempPath & "command.dat"
-        
         Put #iFileNum, 1, bDatabase
         
-        ReDim RubiCommands(14 - 1) As tRubiCommand
-        ReDim RubiParams(14 - 1, 9 - 1) As tRubiParam
+        ReDim RubiCommands(numOfCommands - 1) As tRubiCommand
+        ReDim RubiParams(numOfCommands - 1, 9 - 1) As tRubiParam
         
         Erase bDatabase
         Seek #iFileNum, 1

@@ -1,7 +1,7 @@
 frmRubIDE = 601, 39, 1548, 808, C, 93, 90, 771, 536, C
 modLinedTextBox = 111, 67, 965, 555, C
 frmReference = -6, 108, 844, 596, C, 292, 158, 721, 390, C
-frmMain = 703, 93, 1623, 669, C, 34, 41, 860, 639, C
+frmMain = 703, 93, 1623, 669, C, 283, 88, 1109, 686, C
 modMain = 473, 45, 1427, 596, C
 frmGoto = 37, 21, 887, 483, C, 283, 202, 582, 374, C
 modKeyboard = -14, 130, 820, 592, C
@@ -19,7 +19,7 @@ frmTextAdjuster = 442, 249, 1337, 815, C, 249, 102, 671, 354, C
 modFont = 116, 70, 965, 532, C
 modArray = -47, 132, 850, 642, C
 vcUpdate = 71, 82, 921, 568, C, 220, 129, 716, 489, C
-modAssociate = 239, 195, 1073, 657, C
+modAssociate = 239, 195, 1178, 657, C
 modTextSapp = 84, 5, 898, 605, C
 frmInsertChar = 81, 133, 932, 595, C, 340, 201, 558, 424, C
 modUnlockFile = 106, 76, 918, 538, C
