@@ -2002,17 +2002,11 @@ Private Sub txtCode_OLEDragDrop(Data As DataObject, Effect As Long, Button As In
             
             Select Case GetExt(Data.Files(1))
                 
-                Case "rbc", "rbh", "rbt"
+                Case "rbc", "rbh", "rbt", "asm"
                     FileIndex = 0
                     LoadedFile = Data.Files(1)
                     cboFile.ListIndex = 0
                     LoadFile
-                    txtCode.SetFocus
-                    
-                Case "gba"
-                    FileIndex = 1
-                    LoadedFile = Data.Files(1)
-                    cboFile.ListIndex = 1
                     txtCode.SetFocus
             
             End Select
