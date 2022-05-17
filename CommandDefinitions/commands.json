@@ -1,34 +1,434 @@
 [
 	{
 		"name":"scall",
-		"desc":"Calls a script from the same bank",
+		"desc":"Execute a subscript. When it ends, return to main script.",
 		"params":[
 			{
-				"desc":"Pointer"
-			}
-		]
-	},
-	{
-		"name":"sjump",
-		"desc":"Jumps to another script from the same bank",
-		"params":[
-			{
-				"desc":"Pointer"
+				"desc":"Script location"
 			}
 		]
 	},
 	{
 		"name":"farscall",
-		"desc":"Calls a script from a different bank",
+		"desc":"Execute a subscript in another bank. When it ends, return to main script.",
 		"params":[
 			{
-				"desc":"Pointer"
+				"desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"memcall",
+		"desc":"Execute a subscript pointed to in memory (by a 3-byte pointer). When it ends, return to main script.",
+		"params":[
+			{
+				"desc":"Memory location"
+			}
+		]
+	},
+	{
+		"name":"sjump",
+		"desc":"Move script execution somewhere else.",
+		"params":[
+			{
+				"desc":"Script location"
 			}
 		]
 	},
 	{
 		"name":"farsjump",
-		"desc":"Jumps to another script from a different bank",
+		"desc":"Move script execution somewhere else (in another bank).",
+		"params":[
+			{
+				"desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"memjump",
+		"desc":"Move script execution to address pointed to in memory (by a 3-byte pointer).",
+		"params":[
+			{
+				"desc":"Memory location"
+			}
+		]
+	},
+	{
+		"name":"ifequal",
+		"desc":"Jumps to another script when script variable is equal to <value>.",
+		"params":[
+			{
+				"desc":"Compare value"
+			},
+			{
+        "desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"ifnotequal",
+		"desc":"Jumps to another script when script variable is not equal to <value>.",
+		"params":[
+			{
+				"desc":"Compare value"
+			},
+			{
+        "desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"iffalse",
+		"desc":"Jumps to another script when script variable is 0.",
+		"params":[
+			{
+        "desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"iftrue",
+		"desc":"Jumps to another script when script variable is not 0.",
+		"params":[
+			{
+        "desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"ifgreater",
+		"desc":"Jumps to another script when script variable is greater than <value>.",
+		"params":[
+			{
+				"desc":"Compare value"
+			},
+			{
+        "desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"ifless",
+		"desc":"Jumps to another script when script variable is less than <value>.",
+		"params":[
+			{
+				"desc":"Compare value"
+			},
+			{
+        "desc":"Script location"
+			}
+		]
+	},
+	{
+		"name":"jumpstd",
+		"desc":"Jumps to a predefined script.",
+		"params":[
+			{
+				"desc":"Predefined script value"
+			}
+		]
+	},
+	{
+		"name":"callstd",
+		"desc":"Executes a predefined script, then resumes the main script.",
+		"params":[
+			{
+				"desc":"Predefined script value"
+			}
+		]
+	},
+	{
+		"name":"callasm",
+		"desc":"Executes raw machine code, useful for /very special/ events.",
+		"params":[
+			{
+				"desc":"ASM location"
+			}
+		]
+	},
+	{
+		"name":"special",
+		"desc":"Executes predefined routines, such as minigames, fades and naming screens.",
+		"params":[
+			{
+				"desc":"Predefined routine name/value"
+			}
+		]
+	},
+	{
+		"name":"memcallasm",
+		"desc":"Executes raw machine code pointed to by an address in memory (3-byte pointer)",
+		"params":[
+			{
+				"desc":"Memory location"
+			}
+		]
+	},
+	{
+		"name":"checkmapscene",
+		"desc":"Check if <map> has a scene number > 0.",
+		"params":[
+			{
+				"desc":"Map ID"
+			}
+		]
+	},
+	{
+		"name":"setmapscene",
+		"desc":"Sets scene number of another map.",
+		"params":[
+			{
+				"desc":"Map ID"
+			},
+			{
+				"desc":"Scene number"
+			}
+		]
+	},
+	{
+		"name":"checkscene",
+		"desc":"Checks if the current map has a scene number > 0.",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"setscene",
+		"desc":"Sets scene number of the current map.",
+		"params":[
+			{
+				"desc":"Scene number"
+			}
+		]
+	},
+	{
+		"name":"setval",
+		"desc":"Manually set the script variable.",
+		"params":[
+			{
+				"desc":"Value"
+			}
+		]
+	},
+	{
+		"name":"addval",
+		"desc":"Add <value> to the script variable.",
+		"params":[
+			{
+				"desc":"Value"
+			}
+		]
+	},
+	{
+		"name":"random",
+		"desc":"Generate a random number between 0 and <value> - 1, and store it to the script variable.",
+		"params":[
+			{
+				"desc":"Upper bound"
+			}
+		]
+	},
+	{
+		"name":"checkver",
+		"desc":"Check the game version and store it to the script variable. (0=gold, 1=silver)",
+		"params":[
+		]
+	},
+	{
+		"name":"readmem",
+		"desc":"Reads <memory location> and saves it to the script variable.",
+		"params":[
+			{
+				"desc":"Memory location"
+			}
+		]
+	},
+	{
+		"name":"writemem",
+		"desc":"Writes the script variable into <memory location>",
+		"params":[
+			{
+				"desc":"Memory location"
+			}
+		]
+	},
+	{
+		"name":"loadmem",
+		"desc":"Write <value> to <memory location>",
+		"params":[
+			{
+				"desc":"Memory location"
+			},
+			{
+				"desc":"Value"
+			}
+		]
+	},
+	{
+		"name":"readvar",
+		"desc":"Reads <internal game variable> into the script variable.",
+		"params":[
+			{
+				"desc":"Internal variable ID"
+			}
+		]
+	},
+	{
+		"name":"writevar",
+		"desc":"Writes the script variable into <internal game variable>",
+		"params":[
+			{
+				"desc":"Internal variable ID"
+			}
+		]
+	},
+	{
+		"name":"loadvar",
+		"desc":"Arbitrarily write <value> to <internal game variable>",
+		"params":[
+			{
+				"desc":"Internal variable ID"
+			},
+			{
+				"desc":"Value"
+			}
+		]
+	},
+	{
+		"name":"giveitem",
+		"desc":"Adds an instance of <item> x <quantity> to the player's bag. Returns 0 in the script variable if bag is full.",
+		"params":[
+			{
+				"desc":"Item ID"
+			},
+			{
+				"desc":"How much"
+			}
+		]
+	},
+	{
+		"name":"takeitem",
+		"desc":"Removes an instance of <item> x <quantity> from the player's bag. Returns 0 in the script variable if there's not enough items.",
+		"params":[
+			{
+				"desc":"Item ID"
+			},
+			{
+				"desc":"How much"
+			}
+		]
+	},
+	{
+		"name":"checkitem",
+		"desc":"Checks if there's any instance of <item> in the player's bag. Returns 1 in the script variable if yes, 0 otherwise.",
+		"params":[
+			{
+				"desc":"Item ID"
+			}
+		]
+	},
+	{
+		"name":"givemoney",
+		"desc":"Add $<value> to <account>.",
+		"params":[
+			{
+				"desc":"Which account"
+			},
+			{
+				"desc":"How much money"
+			}
+		]
+	},
+	{
+		"name":"takemoney",
+		"desc":"Take $<value> from <account>.",
+		"params":[
+			{
+				"desc":"Which account"
+			},
+			{
+				"desc":"How much money"
+			}
+		]
+	},
+	{
+		"name":"checkmoney",
+		"desc":"Check if <account> has enough money. Returns 0 in the script variable if yes, 1 if it's the exact amount, 2 if not enough.",
+		"params":[
+			{
+				"desc":"Which account"
+			},
+			{
+				"desc":"How much money"
+			}
+		]
+	},
+	{
+		"name":"givecoins",
+		"desc":"Give the player <value> coins.",
+		"params":[
+			{
+				"desc":"How many coins"
+			}
+		]
+	},
+	{
+		"name":"takecoins",
+		"desc":"Take <value> coins from the player.",
+		"params":[
+			{
+				"desc":"How many coins"
+			}
+		]
+	},
+	{
+		"name":"checkcoins",
+		"desc":"Check if player has enough coins. Returns 0 in the script variable if yes, 1 if it's the exact amount, 2 if not enough.",
+		"params":[
+			{
+				"desc":"How many coins"
+			}
+		]
+	},
+	{
+		"name":"addcellnum",
+		"desc":"Have contact trade Pokegear numbers with the player. Returns 0 if number is successfully added, 1 otherwise.",
+		"params":[
+			{
+				"desc":"Contact ID"
+			}
+		]
+	},
+	{
+		"name":"delcellnum",
+		"desc":"Deletes contact from player's Pokegear. Returns 0 if number is deleted, 1 otherwise.",
+		"params":[
+			{
+				"desc":"Contact ID"
+			}
+		]
+	},
+	{
+		"name":"checkcellnum",
+		"desc":"Check if contact is in player's Pokegear. Returns 0 if true, 1 otherwise.",
+		"params":[
+			{
+				"desc":"Contact ID"
+			}
+		]
+	},
+	{
+		"name":"checktime",
+		"desc":"Check the current time of day. Returns 0 if script is executed at <value> time of day, 1 otherwise.",
+		"params":[
+			{
+				"desc":"Time of day"
+			}
+		]
+	},
+	{
+		"name":"checkpoke",
+		"desc":"Check if player has <pokemon>. Returns 0 if true, 1 otherwise.",
 		"params":[
 			{
 				"desc":"Pointer"
@@ -36,105 +436,1215 @@
 		]
 	},
 	{
-		"name":"ifequal",
-		"desc":"Checks if value in POINTER == VALUE",
+		"name":"givepoke",
+		"desc":"Give <pokemon> to the player.",
 		"params":[
 			{
-				"desc":"Value to check for"
+				"desc":"Pokemon ID"
 			},
 			{
-				"desc":"Memory address to check"
-			}
-		]
-	},
-	{
-		"name":"ifnotequal",
-		"desc":"Checks if value in POINTER != VALUE",
-		"params":[
-			{
-				"desc":"Value to check for"
+				"desc":"Level"
 			},
 			{
-				"desc":"Memory address to check"
-			}
-		]
-	},
-	{
-		"name":"iftrue",
-		"desc":"Checks if value in POINTER is equal to 1",
-		"params":[
-			{
-				"desc":"Memory address to check"
-			}
-		]
-	},
-	{
-		"name":"iffalse",
-		"desc":"Checks if value in POINTER is equal to 0",
-		"params":[
-			{
-				"desc":"Memory address to check"
-			}
-		]
-	},
-	{
-		"name":"ifgreater",
-		"desc":"Checks if value in POINTER > VALUE",
-		"params":[
-			{
-				"desc":"Value to check for"
+				"desc":"Item"
 			},
 			{
-				"desc":"Memory address to check"
-			}
-		]
-	},
-	{
-		"name":"ifless",
-		"desc":"Checks if value in POINTER < VALUE",
-		"params":[
-			{
-				"desc":"Value to check for"
+				"desc":"Trainer (0=player)"
 			},
 			{
-				"desc":"Memory address to check"
+				"desc":"Trainer name pointer (if trainer=1)"
+			},
+			{
+				"desc":"Nickname pointer (if trainer=1)"
 			}
 		]
 	},
 	{
-		"name":"jumpstd",
-		"desc":"Jumps to a predefined script",
+		"name":"giveegg",
+		"desc":"Gives an egg to the player that hatches into <pokemon> when hatches. Returns 0 if successful, 2 otherwise.",
 		"params":[
 			{
-				"desc":"Predefined script name"
+				"desc":"Pokemon ID"
+			},
+			{
+				"desc":"Level"
 			}
 		]
 	},
 	{
-		"name":"callstd",
-		"desc":"Calls a predefined script",
+		"name":"givepokemail",
+		"desc":"Gives last <pokemon> in party a mail.",
 		"params":[
 			{
-				"desc":"Predefined script name"
+				"desc":"Pointer to mail"
 			}
 		]
 	},
 	{
-		"name":"callasm",
-		"desc":"Calls custom assembly code",
+		"name":"checkpokemail",
+		"desc":"Checks if last <pokemon> has mail. Returns 0=wrong letter, 1=success, 2=cancel, 3=no letter, 4=only mon in party.",
 		"params":[
 			{
-				"desc":"Location of assembly code"
+				"desc":"Pointer to mail"
 			}
 		]
 	},
 	{
-		"name":"special",
-		"desc":"Calls a special event",
+		"name":"checkevent",
+		"desc":"Reads <event flag>, returns its exact value.",
 		"params":[
 			{
-				"desc":"Name of special event"
+				"desc":"Event ID"
 			}
+		]
+	},
+	{
+		"name":"clearevent",
+		"desc":"Sets <event flag> to 0.",
+		"params":[
+			{
+				"desc":"Event ID"
+			}
+		]
+	},
+	{
+		"name":"setevent",
+		"desc":"Set <event flag> to 1.",
+		"params":[
+			{
+				"desc":"Event ID"
+			}
+		]
+	},
+	{
+		"name":"checkflag",
+		"desc":"Reads <engine flag>, returns its exact value.",
+		"params":[
+			{
+				"desc":"Engine flag ID"
+			}
+		]
+	},
+	{
+		"name":"clearflag",
+		"desc":"Sets <engine flag> to 0.",
+		"params":[
+			{
+				"desc":"Engine flag ID"
+			}
+		]
+	},
+	{
+		"name":"setflag",
+		"desc":"Sets <engine flag> to 1",
+		"params":[
+			{
+				"desc":"Engine flag ID"
+			}
+		]
+	},
+	{
+		"name":"wildon",
+		"desc":"Activate all wild battles in the area.",
+		"params":[
+		]
+	},
+	{
+		"name":"wildoff",
+		"desc":"Deactivate all wild battles in the area.",
+		"params":[
+		]
+	},
+	{
+		"name":"xycompare",
+		"desc":"Compares position of player with an X/Y table.",
+		"params":[
+			{
+				"desc":"X/Y table pointer"
+			}
+		]
+	},
+	{
+		"name":"warpmod",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Warp number"
+			},
+			{
+				"desc":"Map ID"
+			}
+		]
+	},
+	{
+		"name":"blackoutmod",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Map ID"
+			}
+		]
+	},
+	{
+		"name":"warp",
+		"desc":"Warps to an arbitrary location in <map>. All 0's will reload the map at the current position. Script execution will continue, however.",
+		"params":[
+			{
+				"desc":"Map ID"
+			},
+			{
+				"desc":"X"
+			},
+			{
+				"desc":"Y"
+			}
+		]
+	},
+	{
+		"name":"getmoney",
+		"desc":"Saves money from <account> as text in a string buffer 1, 2, or 3",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			},
+			{
+				"desc":"Account ID"
+			}
+		]
+	},
+	{
+		"name":"getcoins",
+		"desc":"Saves coins as text in string buffer 1, 2, or 3",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			}
+		]
+	},
+	{
+		"name":"getnum",
+		"desc":"Saves script variable as text in string buffer 1, 2, or 3",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			}
+		]
+	},
+	{
+		"name":"getmonname",
+		"desc":"Saves <pokemon>'s name in string buffer 1, 2, or 3",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			},
+			{
+				"desc":"Pokemon ID"
+			}
+		]
+	},
+	{
+		"name":"getitemname",
+		"desc":"Saves <item>'s name in string buffer 1, 2, or 3",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			},
+			{
+				"desc":"Item ID"
+			}
+		]
+	},
+	{
+		"name":"getcurlandmarkname",
+		"desc":"Saves current landmark name in string buffer 1, 2, or 3",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			}
+		]
+	},
+	{
+		"name":"gettrainername",
+		"desc":"",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			},
+			{
+				"desc":"Trainer group ID"
+			},
+			{
+				"desc":"Trainer instance ID"
+			}
+		]
+	},
+	{
+		"name":"getstring",
+		"desc":"",
+		"params":[
+			{
+				"desc":"String buffer ID"
+			},
+			{
+				"desc":"Text location"
+			}
+		]
+	},
+	{
+		"name":"itemnotify",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"pocketisfull",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"opentext",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"refreshscreen",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"closetext",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"writeunusedbytebuffer",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Value"
+			}
+		]
+	},
+	{
+		"name":"farwritetext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Text location"
+			}
+		]
+	},
+	{
+		"name":"writetext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Text location"
+			}
+		]
+	},
+	{
+		"name":"repeattext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"$FF"
+			},
+			{
+				"desc":"$FF"
+			}
+		]
+	},
+	{
+		"name":"yesorno",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"loadmenu",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Menu data location"
+			}
+		]
+	},
+	{
+		"name":"closewindow",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"jumptextfaceplayer",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Text location"
+			}
+		]
+	},
+	{
+		"name":"farjumptext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Text location"
+			}
+		]
+	},
+	{
+		"name":"jumptext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Text location"
+			}
+		]
+	},
+	{
+		"name":"waitbutton",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"buttonsound",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"pokepic",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Pokemon ID"
+			}
+		]
+	},
+	{
+		"name":"closepokepic",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"_2dmenu",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"verticalmenu",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"loadpikachudata",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"randomwildmon",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"loadtemptrainer",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"loadwildmon",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Pokemon ID"
+			},
+			{
+				"desc":"Level"
+			}
+		]
+	},
+	{
+		"name":"loadtrainer",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Trainer group ID"
+			},
+			{
+				"desc":"Trainer instance ID"
+			}
+		]
+	},
+	{
+		"name":"startbattle",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"reloadmapafterbattle",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"catchtutorial",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Sprite ID"
+			}
+		]
+	},
+	{
+		"name":"trainertext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Text ID"
+			}
+		]
+	},
+	{
+		"name":"trainerflagaction",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Action ID"
+			}
+		]
+	},
+	{
+		"name":"winlosstext",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Win text location"
+			},
+			{
+				"desc":"Loss text location"
+			}
+		]
+	},
+	{
+		"name":"scripttalkafter",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"endifjustbattled",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"checkjustbattled",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"setlasttalked",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			}
+		]
+	},
+	{
+		"name":"applymovement",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			},
+			{
+				"desc":"Movement data location"
+			}
+		]
+	},
+	{
+		"name":"applymovementlasttalked",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Movement data location"
+			}
+		]
+	},
+	{
+		"name":"faceplayer",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"faceobject",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object facing"
+			},
+			{
+				"desc":"Object being faced"
+			}
+		]
+	},
+	{
+		"name":"variablesprite",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Variable sprite ID"
+			},
+			{
+				"desc":"Sprite ID"
+			}
+		]
+	},
+	{
+		"name":"disappear",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			}
+		]
+	},
+	{
+		"name":"appear",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			}
+		]
+	},
+	{
+		"name":"follow",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object being followed"
+			},
+			{
+				"desc":"Object following"
+			}
+		]
+	},
+	{
+		"name":"stopfollow",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"moveobject",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			},
+			{
+				"desc":"X"
+			},
+			{
+				"desc":"Y"
+			}
+		]
+	},
+	{
+		"name":"writeobjectxy",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			}
+		]
+	},
+	{
+		"name":"loademote",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Emote ID"
+			}
+		]
+	},
+	{
+		"name":"showemote",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Emote ID"
+			},
+			{
+				"desc":"Object ID"
+			},
+			{
+				"desc":"Time in frames"
+			}
+		]
+	},
+	{
+		"name":"turnobject",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object ID"
+			},
+			{
+				"desc":"Facing direction"
+			}
+		]
+	},
+	{
+		"name":"follownotexact",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Object being followed"
+			},
+			{
+				"desc":"Object following"
+			}
+		]
+	},
+	{
+		"name":"earthquake",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Time in frames"
+			}
+		]
+	},
+	{
+		"name":"changemapblocks",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Map location"
+			}
+		]
+	},
+	{
+		"name":"changeblock",
+		"desc":"",
+		"params":[
+			{
+				"desc":"X"
+			},
+			{
+				"desc":"Y"
+			},
+			{
+				"desc":"Block number"
+			}
+		]
+	},
+	{
+		"name":"reloadmap",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"reloadmappart",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"writecmdqueue",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Command queue location"
+			}
+		]
+	},
+	{
+		"name":"delcmdqueue",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Byte"
+			}
+		]
+	},
+	{
+		"name":"playmusic",
+		"desc":"",
+		"params":[
+			{
+				"desc":"Music ID"
+			}
+		]
+	},
+	{
+		"name":"encountermusic",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"musicfadeout",
+		"desc":"",
+		"params":[
+			{
+				"desc":"New music ID"
+			},
+			{
+				"desc":"Fade time in frames"
+			}
+		]
+	},
+	{
+		"name":"playmapmusic",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"dontrestartmapmusic",
+		"desc":"",
+		"params":[
+		]
+	},
+	{
+		"name":"cry",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"playsound",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"waitsfx",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"warpsound",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"specialsound",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"autoinput",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"newloadmap",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"pause",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"deactivatefacing",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"prioritysjump",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"warpcheck",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"stopandsjump",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"return",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"end",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"reloadandreturn",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"endall",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"pokemart",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"elevator",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"trade",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"askforphonenumber",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"phonecall",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"hangup",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"describedecoration",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"fruittree",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"specialphonecall",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"checkphonecall",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"verbosegiveitem",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"verbosegiveitemvar",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"swarm",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"halloffame",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"credits",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"warpfacing",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"battletowertext",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"getlandmarkname",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"gettrainerclassname",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"getname",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"wait",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"checksave",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"loadmonindex",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"checkmaplockedmons",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"givetmhm",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"checktmhm",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"verbosegivetmhm",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"tmhmnotify",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	{
+		"name":"tmhmtotext",
+		"desc":"",
+		"params":[
+			
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+		"name":"scene_script",
+		"desc":"",
+		"params":[
+			{"desc": "Script pointer"}
+		]
+	},
+	{
+		"name":"callback",
+		"desc":"",
+		"params":[
+			{"desc": "Type of callback"},
+			{"desc": "Callback pointer"}
+		]
+	},
+	{
+		"name":"warp_event",
+		"desc":"",
+		"params":[
+			{"desc": "X"},
+			{"desc": "Y"},
+			{"desc": "Map ID"},
+			{"desc": "Warp number (1-indexed)"}
+		]
+	},
+	{
+		"name":"coord_event",
+		"desc":"",
+		"params":[
+			{"desc": "X"},
+			{"desc": "Y"},
+			{"desc": "Scene ID"},
+			{"desc": "Script pointer"}
+		]
+	},
+	{
+		"name":"bg_event",
+		"desc":"",
+		"params":[
+			{"desc": "X"},
+			{"desc": "Y"},
+			{"desc": "BG event type"},
+			{"desc": "Script pointer"}
+		]
+	},
+	{
+		"name":"object_event",
+		"desc":"",
+		"params":[
+			{"desc": "X"},
+			{"desc": "Y"},
+			{"desc": "Sprite"},
+			{"desc": "Movement type"},
+			{"desc": "Radius X"},
+			{"desc": "Radius Y"},
+			{"desc": "Hour limits, lower bound"},
+			{"desc": "Hour limits, upper bound"},
+			{"desc": "Color"},
+			{"desc": "Type of object"},
+			{"desc": "Sight range (if type = trainer)"},
+			{"desc": "Script pointer"},
+			{"desc": "Disappears on which script (-1 = always appear)"}
+		]
+	},
+	{
+		"name":"trainer",
+		"desc":"",
+		"params":[
+			{"desc": "Trainer group ID"},
+			{"desc": "Trainer instance ID"},
+			{"desc": "Set which event when winning"},
+			{"desc": "Seen text location"},
+			{"desc": "Win text location"},
+			{"desc": "Loss text location"},
+			{"desc": "After battle text location"}
 		]
 	}
 ]

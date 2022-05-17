@@ -16,7 +16,7 @@ BS_paramsList  = b""
 
 for i in commands_list:
     BS_params = []
-    for j in range(9):
+    for j in range(13):
         BS_params += [{"desc": ""}]
     ctr = 0
     for k in i["params"]:

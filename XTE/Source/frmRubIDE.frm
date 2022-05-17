@@ -30,13 +30,13 @@ Begin VB.Form frmRubIDE
    Begin VB.PictureBox picQuickInfo 
       BackColor       =   &H80000018&
       BorderStyle     =   0  'None
-      Height          =   2040
+      Height          =   2910
       Left            =   6690
-      ScaleHeight     =   136
+      ScaleHeight     =   194
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   101
       TabIndex        =   4
-      Top             =   2580
+      Top             =   1500
       Visible         =   0   'False
       Width           =   1515
       Begin VB.Timer tmrQuickInfo 
@@ -44,6 +44,54 @@ Begin VB.Form frmRubIDE
          Interval        =   60000
          Left            =   960
          Top             =   840
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 13"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   12
+         Left            =   120
+         TabIndex        =   16
+         Top             =   2610
+         Width           =   675
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 12"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   11
+         Left            =   120
+         TabIndex        =   15
+         Top             =   2400
+         Width           =   675
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 11"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   10
+         Left            =   120
+         TabIndex        =   14
+         Top             =   2190
+         Width           =   675
+      End
+      Begin VB.Label lblParams 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Param 10"
+         ForeColor       =   &H80000017&
+         Height          =   195
+         Index           =   9
+         Left            =   120
+         TabIndex        =   13
+         Top             =   1980
+         Width           =   675
       End
       Begin VB.Label lblParams 
          AutoSize        =   -1  'True
@@ -104,10 +152,10 @@ Begin VB.Form frmRubIDE
       Begin VB.Line linShadow 
          BorderColor     =   &H80000016&
          Index           =   0
-         X1              =   99
+         X1              =   104
          X2              =   2
-         Y1              =   95
-         Y2              =   95
+         Y1              =   208
+         Y2              =   208
       End
       Begin VB.Label lblParams 
          AutoSize        =   -1  'True
@@ -173,7 +221,7 @@ Begin VB.Form frmRubIDE
          BackColor       =   &H80000008&
          BorderColor     =   &H80000011&
          FillColor       =   &H80000008&
-         Height          =   2010
+         Height          =   2910
          Left            =   0
          Top             =   0
          Width           =   1485
@@ -1515,6 +1563,9 @@ Dim lMaxWidth As Long
 Dim LineNumberSize As SIZE
 Dim lTotalLines As Long
 Dim lCurLine As Long
+Dim txtRE As RegExp
+Dim txtMatches As MatchCollection
+Dim txtMatch As Match
     
     frmMain.StatusBar.PanelCaption(2) = GetCount(txtCode)
     
@@ -1526,11 +1577,7 @@ Dim lCurLine As Long
         
             If InStr(1, sCurLine, vbSpace) <> 1 Then
                 
-                Dim txtRE As RegExp
-                Dim txtMatches As MatchCollection
-                Dim txtMatch As Match
-                
-                Set txtRE = New RegExp
+                txtRE = New RegExp
                 txtRE.Pattern = "(\s?\w+|\"".+\"")\s?"
                 txtRE.Global = True
                 txtRE.IgnoreCase = True

@@ -175,16 +175,18 @@ Dim j As Integer
     sTempPath = GetTempDir
     
     Dim numOfCommands As Integer
+    Dim numOfMaxParams As Integer
     
     ' XXX: Change this whenever commands.bin changes
-    numOfCommands = 14
+    numOfCommands = 184
+    numOfMaxParams = 13
     
     iFileNum = FreeFile
     Open sTempPath & "command.dat" For Binary As #iFileNum
         Put #iFileNum, 1, bDatabase
         
         ReDim RubiCommands(numOfCommands - 1) As tRubiCommand
-        ReDim RubiParams(numOfCommands - 1, 9 - 1) As tRubiParam
+        ReDim RubiParams(numOfCommands - 1, numOfMaxParams - 1) As tRubiParam
         
         Erase bDatabase
         Seek #iFileNum, 1
@@ -192,7 +194,7 @@ Dim j As Integer
         Get #iFileNum, , RubiCommands
         
         For i = LBound(RubiCommands) To UBound(RubiCommands)
-            For j = 0 To 9 - 1
+            For j = 0 To numOfMaxParams - 1
                 Get #iFileNum, , RubiParams(i, j)
             Next j
         Next i
