@@ -2343,7 +2343,7 @@ Public Sub mnuSave_Click()
 
     Select Case GetExt(Document(Tabs.SelectedTab).LoadedFile)
     
-        Case "rbc", "rbh", "rbt"
+        Case "rbc", "rbh", "rbt", "asm"
             Document(Tabs.SelectedTab).Save (True)
             Document(Tabs.SelectedTab).IsDirty = False
             StatusBar.PanelEnabled(4) = False
@@ -2363,7 +2363,7 @@ Private Sub mnuSaveAs_Click()
 
         Select Case GetExt(Document(Tabs.SelectedTab).LoadedFile)
     
-            Case "rbc", "rbh", "rbt"
+            Case "rbc", "rbh", "rbt", "asm"
             
                 Document(Tabs.SelectedTab).Caption = GetFileName(Document(Tabs.SelectedTab).LoadedFile)
                 Tabs.TabText(Tabs.SelectedTab) = GetFileName(Document(Tabs.SelectedTab).LoadedFile)
@@ -2422,7 +2422,7 @@ Private Sub objTmr_Timer()
     
     Select Case GetExt(Document(Tabs.SelectedTab).LoadedFile)
     
-        Case "rbc", "rbh", "rbt"
+        Case "rbc", "rbh", "rbt", "asm"
             
             If Document(Tabs.SelectedTab).IsDirty Then
                 Document(Tabs.SelectedTab).Save (True)

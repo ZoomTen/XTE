@@ -317,7 +317,7 @@ Dim cString As cStringBuilder
                 cString.Append sArray2(UBound(sArray2)) & sNewPage
             End If
         Else
-            cString.Append sArray(i) & sNewPage
+            cString.Append """" & sArray(i) & """" & sNewPage
         End If
     Next i
     
