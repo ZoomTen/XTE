@@ -479,6 +479,7 @@ Private sPrevQuickInfo As String
 
 Private Const EM_SETREADONLY = &HCF&
 Private Const WM_CONTEXTMENU = &H7B&
+Private Const MY_RE = "\s?((rom[0x]|bank)\[[$%]?[0-9a-fA-F]+\]|\w+|\"".+\"")\s?"
 
 Private WithEvents cSubclasser As cSelfSubclasser
 Attribute cSubclasser.VB_VarHelpID = -1
@@ -902,6 +903,8 @@ Dim i As Long
 Dim Found As Boolean
 Dim sTemp As String
 Dim oOpenDialog As clsCommonDialog
+Dim txtRE As RegExp
+Dim txtMatches As MatchCollection
     
     If Shift = vbCtrlMask + vbShiftMask Then
         Select Case KeyCode
@@ -1059,8 +1062,20 @@ Dim oOpenDialog As clsCommonDialog
         Exit Sub
       End If
       
-      sTemp = Replace$(sTemp, vbTab, "")
-      sTemp = Replace$(sTemp, vbSpace, "")
+      
+      Set txtRE = New RegExp
+      txtRE.Pattern = MY_RE
+      txtRE.Global = True
+      txtRE.IgnoreCase = True
+      
+      Set txtMatches = txtRE.Execute(sTemp)
+      
+      If txtMatches.Count = 0 Then
+        sTemp = ""
+      Else
+        sTemp = Replace$(txtMatches.Item(0), vbTab, "")
+        sTemp = Replace$(sTemp, vbSpace, "")
+      End If
       
       frmReference.cboList.ListIndex = 0
       
@@ -1562,7 +1577,6 @@ Dim lTotalLines As Long
 Dim lCurLine As Long
 Dim txtRE As RegExp
 Dim txtMatches As MatchCollection
-Dim txtMatch As Match
     
     frmMain.StatusBar.PanelCaption(2) = GetCount(txtCode)
     
@@ -1572,7 +1586,7 @@ Dim txtMatch As Match
         
         If LenB(sCurLine) <> 0 Then
             Set txtRE = New RegExp
-            txtRE.Pattern = "\s?((rom[0x]|bank)\[[$%]?[0-9a-fA-F]+\]|\w+|\"".+\"")\s?"
+            txtRE.Pattern = MY_RE
             txtRE.Global = True
             txtRE.IgnoreCase = True
             
