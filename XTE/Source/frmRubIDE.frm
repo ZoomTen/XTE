@@ -1572,7 +1572,7 @@ Dim txtMatch As Match
         
         If LenB(sCurLine) <> 0 Then
             Set txtRE = New RegExp
-            txtRE.Pattern = "(\s?\w+|\"".+\"")\s?"
+            txtRE.Pattern = "\s?((rom[0x]|bank)\[[$%]?[0-9a-fA-F]+\]|\w+|\"".+\"")\s?"
             txtRE.Global = True
             txtRE.IgnoreCase = True
             
@@ -1608,137 +1608,38 @@ Dim txtMatch As Match
                     If GotIt = False Then
                         
                         Select Case sArray(0)
-                            Case "#org", "#seek"
+                            Case "include"
                                 lParamCount = 1
                                 ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Static/dynamic offset"
-                            Case "#dynamic"
+                                sDescriptions(0) = "Code file to include"
+                            Case "incbin"
+                                lParamCount = 3
+                                ReDim sDescriptions(lParamCount - 1) As String
+                                sDescriptions(0) = "Literal binary file to include"
+                                sDescriptions(1) = "(optional) Starting byte"
+                                sDescriptions(2) = "(optional) How many bytes"
+                            Case "section"
+                                lParamCount = 3
+                                ReDim sDescriptions(lParamCount - 1) As String
+                                sDescriptions(0) = "Section name"
+                                sDescriptions(1) = "ROM0[<offset>] or ROMX[<offset>]"
+                                sDescriptions(2) = "(optional) BANK[<rom bank>]"
+                            Case "if"
                                 lParamCount = 1
                                 ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Dynamic start offset"
-                            Case "="
+                                sDescriptions(0) = "(condition)"
+                            Case "db"
+                                lParamCount = 1
+                                ReDim sDescriptions(lParamCount - 1) As String
+                                sDescriptions(0) = "One or more 1-byte values (comma separated)"
+                            Case "dw"
+                                lParamCount = 1
+                                ReDim sDescriptions(lParamCount - 1) As String
+                                sDescriptions(0) = "One or more 2-byte values (comma separated)"
+                            Case "text"
                                 lParamCount = 1
                                 ReDim sDescriptions(lParamCount - 1) As String
                                 sDescriptions(0) = "Raw text"
-                            Case "#raw", "#binary", "#put"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Raw data [/ raw type]"
-                                sDescriptions(1) = "[...]"
-                            Case "#include"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Header file"
-                                sDescriptions(1) = "[...]"
-                            Case "#define", "#const"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Symbol"
-                                sDescriptions(1) = "Value"
-                            Case "#alias"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Symbol"
-                                sDescriptions(1) = "Alias"
-                            Case "#erase"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Start offset"
-                                sDescriptions(1) = "Length"
-                            Case "#eraserange"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Start offset"
-                                sDescriptions(1) = "End offset"
-                            Case "#remove", "#removeall", "#removestring", "#removemove", "#removemart"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Data offset"
-                            Case "#reserve"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Byte amount"
-                            Case "#braille"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Braille text"
-                            Case "#clean", "#break", "#stop", "#undefineall", "#deconstall", "#unaliasall", "#definelist", "#constlist", "cmdd4"
-                                lParamCount = 1
-                                ReDim sDescriptions(0) As String
-                                sDescriptions(0) = Left$(LoadResString(12002), Len(LoadResString(12002)) - 1)
-                            Case "#undefine", "#deconst"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Symbol"
-                            Case "#unalias"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Alias"
-                            Case "#freespace"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Free space byte"
-                            Case "autobank"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "On/Off"
-                            Case "msgbox", "message"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = RubiParams(&HF, 1).Description
-                                sDescriptions(1) = "Message type"
-                            Case "if"
-                                lParamCount = 3
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = RubiParams(&H6, 0).Description
-                                sDescriptions(1) = "[call, gosub / goto, jump]"
-                                sDescriptions(2) = RubiParams(&H4, 0).Description
-                            Case "else"
-                                lParamCount = 2
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "[call, gosub / goto, jump]"
-                                sDescriptions(1) = RubiParams(&H4, 0).Description
-                            Case "boxset"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = RubiParams(&H9, 0).Description
-                            Case "giveitem"
-                                lParamCount = 3
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = RubiParams(&H44, 0).Description
-                                sDescriptions(1) = RubiParams(&H44, 1).Description
-                                sDescriptions(2) = "Message type"
-                            Case "giveitem2"
-                                lParamCount = 3
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = RubiParams(&H44, 0).Description
-                                sDescriptions(1) = RubiParams(&H44, 1).Description
-                                sDescriptions(2) = RubiParams(&H31, 0).Description
-                            Case "giveitem3"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = RubiParams(&H4B, 0).Description
-                            Case "wildbattle"
-                                lParamCount = 3
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Pokémon species to battle"
-                                sDescriptions(1) = RubiParams(&H79, 1).Description
-                                sDescriptions(2) = RubiParams(&H79, 2).Description
-                            Case "wildbattle2"
-                                lParamCount = 4
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Pokémon species to battle"
-                                sDescriptions(1) = RubiParams(&H79, 1).Description
-                                sDescriptions(2) = RubiParams(&H79, 2).Description
-                                sDescriptions(3) = "Battle style"
-                            Case "registernav"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Trainer ID #"
-                            Case "cmdd3"
-                                lParamCount = 1
-                                ReDim sDescriptions(lParamCount - 1) As String
-                                sDescriptions(0) = "Unknown"
                             Case Else
                                 GoTo Hide
                         End Select
