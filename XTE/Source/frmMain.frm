@@ -3680,7 +3680,7 @@ Dim i As Long
     ' See if there is a previous instance.
     If Not IsPrevInstance Then
 
-        SetIcon Me.hWnd, "AAA"
+        ' SetIcon Me.hWnd, "AAA"
         Localize Me
                 
         Set cSubclasser = New cSelfSubclasser
