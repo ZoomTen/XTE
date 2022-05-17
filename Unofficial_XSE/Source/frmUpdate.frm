@@ -43,7 +43,6 @@ Begin VB.Form frmUpdate
       Width           =   5970
       _ExtentX        =   10530
       _ExtentY        =   6588
-      ConfigFileURL   =   "http://www.andreasartori.net/hackmew/updates/XSE.txt"
    End
 End
 Attribute VB_Name = "frmUpdate"

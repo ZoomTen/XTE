@@ -3,7 +3,7 @@ Begin VB.MDIForm frmMain
    Appearance      =   0  'Flat
    AutoShowChildren=   0   'False
    BackColor       =   &H8000000F&
-   Caption         =   "XSE - eXtreme Script Editor"
+   Caption         =   "Xtreme Text Editor"
    ClientHeight    =   6885
    ClientLeft      =   165
    ClientTop       =   555
@@ -1011,17 +1011,9 @@ Begin VB.MDIForm frmMain
          TabStop         =   0   'False
          Top             =   30
          Width           =   11535
-         _ExtentX        =   20346
-         _ExtentY        =   820
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   20346
+         _extenty        =   820
+         font            =   "frmMain.frx":024E
       End
    End
    Begin VB.PictureBox picStatusBar 
@@ -1044,50 +1036,42 @@ Begin VB.MDIForm frmMain
          Left            =   0
          Top             =   0
          Width           =   11625
-         _ExtentX        =   20505
-         _ExtentY        =   582
-         BackColor       =   16053492
-         ForeColor       =   0
-         ForeColorDissabled=   9474192
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         NumberOfPanels  =   7
-         MaskColor       =   0
-         PWidth1         =   249
-         pText1          =   ""
-         pTTText1        =   ""
-         pEnabled1       =   -1  'True
-         PWidth2         =   178
-         pText2          =   ""
-         pTTText2        =   ""
-         pEnabled2       =   -1  'True
-         PWidth3         =   176
-         pText3          =   "Copyright © 2008 HackMew"
-         pTTText3        =   ""
-         pEnabled3       =   0   'False
-         PWidth4         =   18
-         pText4          =   "*"
-         pTTText4        =   ""
-         pEnabled4       =   0   'False
-         PWidth5         =   37
-         pText5          =   "CAPS"
-         pTTText5        =   ""
-         pEnabled5       =   0   'False
-         PWidth6         =   35
-         pText6          =   "NUM"
-         pTTText6        =   ""
-         pEnabled6       =   0   'False
-         PWidth7         =   37
-         pText7          =   "SCRL"
-         pTTText7        =   ""
-         pEnabled7       =   0   'False
+         _extentx        =   20505
+         _extenty        =   582
+         backcolor       =   16053492
+         forecolor       =   0
+         forecolordissabled=   9474192
+         font            =   "frmMain.frx":0276
+         numberofpanels  =   7
+         maskcolor       =   0
+         pwidth1         =   249
+         ptttext1        =   ""
+         ptext1          =   ""
+         penabled1       =   -1  'True
+         pwidth2         =   178
+         ptttext2        =   ""
+         ptext2          =   ""
+         penabled2       =   -1  'True
+         pwidth3         =   176
+         ptttext3        =   ""
+         ptext3          =   "Copyright © 2008 HackMew"
+         penabled3       =   0   'False
+         pwidth4         =   18
+         ptttext4        =   ""
+         ptext4          =   "*"
+         penabled4       =   0   'False
+         pwidth5         =   37
+         ptttext5        =   ""
+         ptext5          =   "CAPS"
+         penabled5       =   0   'False
+         pwidth6         =   35
+         ptttext6        =   ""
+         ptext6          =   "NUM"
+         penabled6       =   0   'False
+         pwidth7         =   37
+         ptttext7        =   ""
+         ptext7          =   "SCRL"
+         penabled7       =   0   'False
       End
    End
    Begin VB.Menu mnuFile 

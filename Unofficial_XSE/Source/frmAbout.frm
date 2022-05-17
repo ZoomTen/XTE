@@ -46,6 +46,22 @@ Begin VB.Form frmAbout
       AutoSize        =   -1  'True
       BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
+      Caption         =   "HackMew"
+      ForeColor       =   &H00666666&
+      Height          =   195
+      Index           =   15
+      Left            =   180
+      TabIndex        =   17
+      Top             =   3840
+      UseMnemonic     =   0   'False
+      Visible         =   0   'False
+      Width           =   675
+   End
+   Begin VB.Label lblMarquee 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "RayGaara4Dragon, liuyanghejerry, Larsie13 - $3"
       ForeColor       =   &H00666666&
       Height          =   195
@@ -247,7 +263,7 @@ Begin VB.Form frmAbout
       AutoSize        =   -1  'True
       BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
-      Caption         =   "A whole new scripting experience."
+      Caption         =   "Description here"
       ForeColor       =   &H80000008&
       Height          =   195
       Index           =   1
@@ -256,7 +272,7 @@ Begin VB.Form frmAbout
       Tag             =   "9002"
       Top             =   360
       UseMnemonic     =   0   'False
-      Width           =   2460
+      Width           =   1170
    End
    Begin VB.Label lblMarquee 
       Appearance      =   0  'Flat
@@ -289,7 +305,7 @@ Begin VB.Form frmAbout
       AutoSize        =   -1  'True
       BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
-      Caption         =   "Copyright © 2008 HackMew"
+      Caption         =   "© 2008 HackMew, © 2022 Zumi"
       Enabled         =   0   'False
       ForeColor       =   &H80000008&
       Height          =   195
@@ -298,7 +314,7 @@ Begin VB.Form frmAbout
       TabIndex        =   2
       Top             =   600
       UseMnemonic     =   0   'False
-      Width           =   2025
+      Width           =   2310
    End
    Begin VB.Label lblVersion 
       Alignment       =   2  'Center
@@ -366,7 +382,7 @@ Dim i As Integer
     
     lblMarquee(2).Caption = App.LegalCopyright
     
-    For i = lblMarquee.lBound To lblMarquee.UBound
+    For i = lblMarquee.LBound To lblMarquee.UBound
         If InStrB(lblMarquee(i).Caption, "$1") Then
             lblMarquee(i).Caption = Replace(lblMarquee(i).Caption, "$1", LoadResString(9004))
         ElseIf InStrB(lblMarquee(i).Caption, "$2") Then
@@ -392,6 +408,14 @@ Private Sub Form_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As 
     tmrMarquee.Interval = lNormalSpeed
 End Sub
 
+Private Sub Text1_Change()
+
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
 Private Sub tmrMarquee_Timer()
 Dim i As Integer
     
@@ -401,12 +425,12 @@ Dim i As Integer
     End If
     
     ' For each label
-    For i = lblMarquee.lBound To lblMarquee.UBound
+    For i = lblMarquee.LBound To lblMarquee.UBound
         
         ' Decrease its top position
         lblMarquee(i).Top = lblMarquee(i).Top - lScrollingWidth
         
-        If lblMarquee(i).Top < lOriginalPos(lblMarquee.lBound) - lblMarquee(lblMarquee.lBound).Height \ 2 Then
+        If lblMarquee(i).Top < lOriginalPos(lblMarquee.LBound) - lblMarquee(lblMarquee.LBound).Height \ 2 Then
             ' If the label is too high, hide it
             lblMarquee(i).Visible = False
         ElseIf lblMarquee(i).Top >= lOriginalPos(lLabelsToShow) Then
@@ -422,7 +446,7 @@ Dim i As Integer
     ' If the last label went too far away
     If lblMarquee(lblMarquee.UBound).Top < -(lblMarquee(lblMarquee.UBound).Top) * 2 Then
         
-        For i = lblMarquee.lBound To lblMarquee.UBound
+        For i = lblMarquee.LBound To lblMarquee.UBound
             
             ' Restore initial positions
             lblMarquee(i).Top = lOriginalPos(i)
