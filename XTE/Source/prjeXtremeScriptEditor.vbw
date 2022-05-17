@@ -1,7 +1,7 @@
-frmRubIDE = 601, 39, 1548, 808, C, 93, 90, 771, 536, C
+frmRubIDE = 601, 39, 1548, 808, C, -12, 98, 666, 544, C
 modLinedTextBox = 111, 67, 965, 555, C
 frmReference = -6, 108, 844, 596, C, 292, 158, 721, 390, C
-frmMain = 703, 93, 1623, 669, C, 283, 88, 1109, 686, C
+frmMain = 675, 98, 1595, 674, Z, 283, 88, 1109, 686, C
 modMain = 473, 45, 1427, 596, C
 frmGoto = 37, 21, 887, 483, C, 283, 202, 582, 374, C
 modKeyboard = -14, 130, 820, 592, C
@@ -35,5 +35,5 @@ modListBox = 157, 66, 940, 517, C
 frmAutoSave = 93, 171, 916, 539, C, 238, 139, 632, 324, C
 modTimers = 138, 138, 961, 506, C
 APITimer = 112, 71, 935, 439, C
-modScripting = 176, 232, 1508, 820, C
+modScripting = -651, 239, 681, 827, C
 modBinDec = 96, 63, 1590, 519, C
