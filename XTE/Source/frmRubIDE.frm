@@ -1059,11 +1059,8 @@ Dim oOpenDialog As clsCommonDialog
         Exit Sub
       End If
       
-      If InStrB(1, sTemp, vbSpace, vbBinaryCompare) <> 0 Then
-        sTemp = MidB$(sTemp, 1, InStrB(sTemp, vbSpace) - 1)
-      End If
-      
       sTemp = Replace$(sTemp, vbTab, "")
+      sTemp = Replace$(sTemp, vbSpace, "")
       
       frmReference.cboList.ListIndex = 0
       
