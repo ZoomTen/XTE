@@ -2014,7 +2014,8 @@ Private Sub GetTabLimit()
 End Sub
 
 Private Sub MDIForm_Resize()
-
+    txtNotes.Height = (Me.Height / Screen.TwipsPerPixelY) - 300
+    
     If IsPrevInstance Then Exit Sub
     
     If Me.WindowState <> vbMinimized Then
@@ -2039,7 +2040,6 @@ Private Sub MDIForm_Resize()
             Shell_NotifyIcon NIM_DELETE, TrayI
         End If
     End If
-
 End Sub
 
 Private Sub mnuAbout_Click()
