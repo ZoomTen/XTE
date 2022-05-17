@@ -1015,6 +1015,8 @@ Dim oOpenDialog As clsCommonDialog
         sTemp = MidB$(sTemp, 1, InStrB(sTemp, vbSpace) - 1)
       End If
       
+      sTemp = Replace$(sTemp, vbTab, "")
+      
       frmReference.cboList.ListIndex = 0
       
       For i = LBound(RubiCommands) To UBound(RubiCommands)
