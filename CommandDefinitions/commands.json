@@ -1572,14 +1572,14 @@
 	
 	{
 		"name":"scene_script",
-		"desc":"",
+		"desc":"Defines a script to be automatically run when a scene number is set.",
 		"params":[
 			{"desc": "Script pointer"}
 		]
 	},
 	{
 		"name":"callback",
-		"desc":"",
+		"desc":"Defines a map callback.",
 		"params":[
 			{"desc": "Type of callback"},
 			{"desc": "Callback pointer"}
@@ -1587,27 +1587,27 @@
 	},
 	{
 		"name":"warp_event",
-		"desc":"",
+		"desc":"Defines a warp. This only works when the underlying tile has a warp collision (e.g. door, carpet, stairs)",
 		"params":[
 			{"desc": "X"},
 			{"desc": "Y"},
 			{"desc": "Map ID"},
-			{"desc": "Warp number (1-indexed)"}
+			{"desc": "Warp number (starts at 1)"}
 		]
 	},
 	{
 		"name":"coord_event",
-		"desc":"",
+		"desc":"Defines an event that automatically runs when the player is at a specified location, and when a certain map scene number is set.",
 		"params":[
 			{"desc": "X"},
 			{"desc": "Y"},
-			{"desc": "Scene ID"},
+			{"desc": "Which scene ID to run the event in"},
 			{"desc": "Script pointer"}
 		]
 	},
 	{
 		"name":"bg_event",
-		"desc":"",
+		"desc":"Defines a background event. While invisible, they can be interacted with (e.g. signs, hidden items)",
 		"params":[
 			{"desc": "X"},
 			{"desc": "Y"},
@@ -1617,7 +1617,7 @@
 	},
 	{
 		"name":"object_event",
-		"desc":"",
+		"desc":"Defines an object event (usually a NPC)",
 		"params":[
 			{"desc": "X"},
 			{"desc": "Y"},
@@ -1625,8 +1625,8 @@
 			{"desc": "Movement type"},
 			{"desc": "Radius X"},
 			{"desc": "Radius Y"},
-			{"desc": "Hour limits, lower bound"},
-			{"desc": "Hour limits, upper bound"},
+			{"desc": "Hour limits, lower bound (-1 = none)"},
+			{"desc": "Hour limits, upper bound (-1 = none)"},
 			{"desc": "Color"},
 			{"desc": "Type of object"},
 			{"desc": "Sight range (if type = trainer)"},
@@ -1636,7 +1636,7 @@
 	},
 	{
 		"name":"trainer",
-		"desc":"",
+		"desc":"Defines a trainer to load.",
 		"params":[
 			{"desc": "Trainer group ID"},
 			{"desc": "Trainer instance ID"},
@@ -1645,6 +1645,43 @@
 			{"desc": "Win text location"},
 			{"desc": "Loss text location"},
 			{"desc": "After battle text location"}
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+		"name":"note",
+		"desc":"Plays a note for <length> units",
+		"params":[
+			{"desc": "Note name"},
+			{"desc": "Length"}
+		]
+	},
+	{
+		"name":"octave",
+		"desc":"Moves to an octave.",
+		"params":[
+       {"desc": "Octave number"}
+		]
+	},
+	{
+		"name":"note_type",
+		"desc":"Sets the instrument parameters and note length (frames per unit)",
+		"params":[
+       {"desc": "Frames per unit"},
+       {"desc": "Starting volume"},
+       {"desc": "Volume envelope / wave instrument"}
 		]
 	}
 ]

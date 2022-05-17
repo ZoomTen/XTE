@@ -178,7 +178,7 @@ Dim j As Integer
     Dim numOfMaxParams As Integer
     
     ' XXX: Change this whenever commands.bin changes
-    numOfCommands = 184
+    numOfCommands = 187
     numOfMaxParams = 13
     
     iFileNum = FreeFile
