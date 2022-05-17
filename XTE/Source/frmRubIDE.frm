@@ -1566,32 +1566,28 @@ Dim txtMatch As Match
     
     frmMain.StatusBar.PanelCaption(2) = GetCount(txtCode)
     
-    If KeyCode = vbKeySpace Or picQuickInfo.Visible And (KeyCode = vbKeyBack Or (KeyCode >= vbKeyA And KeyCode <= vbKeyZ)) Then
+    If KeyCode = vbKeySpace Or picQuickInfo.Visible And (KeyCode = vbKeyBack) Then
         
         sCurLine = GetTextBoxLine(txtCode.hWnd)
         
         If LenB(sCurLine) <> 0 Then
-        
-            If InStr(1, sCurLine, vbSpace) <> 1 Then
-                
-                txtRE = New RegExp
-                txtRE.Pattern = "(\s?\w+|\"".+\"")\s?"
-                txtRE.Global = True
-                txtRE.IgnoreCase = True
-                
-                Set txtMatches = txtRE.Execute(sCurLine)
-                
+            Set txtRE = New RegExp
+            txtRE.Pattern = "(\s?\w+|\"".+\"")\s?"
+            txtRE.Global = True
+            txtRE.IgnoreCase = True
+            
+            Set txtMatches = txtRE.Execute(sCurLine)
+            
+            If txtMatches.Count <> 0 Then
                 ReDim sArray(txtMatches.Count) As String
                 
                 For i = 0 To txtMatches.Count - 1
                     sArray(i) = txtMatches.Item(i)
                 Next i
                 
-                ' SplitB sCurLine, sArray, vbSpace
-                
                 If UBound(sArray) > 0 Then
                     sArray(0) = Replace$(LCase$(sArray(0)), vbTab, "")
-                    sArray(0) = Trim$(sArray(0))
+                    sArray(0) = Replace$(LCase$(sArray(0)), vbSpace, "")
                     If LenB(sPrevQuickInfo) <> 0 Then
                         If sPrevQuickInfo <> sArray(0) Then
                             If KeyCode <> vbKeySpace Then
