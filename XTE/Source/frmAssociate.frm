@@ -28,7 +28,7 @@ Begin VB.Form frmAssociate
    StartUpPosition =   1  'CenterOwner
    Tag             =   "4000"
    Begin VB.CheckBox chkIntegrate 
-      Caption         =   "Associate GBA files with XSE"
+      Caption         =   "Edit ASM with XSE from Explorer shell"
       Height          =   255
       Left            =   120
       TabIndex        =   1
@@ -97,12 +97,12 @@ Dim sMessage As String
     If chkIntegrate.Value = vbChecked Then
         ' If XSE wasn't available into the .gba shell menu, add it
         If AlreadyIntegrated = False Then
-            IntegrateShell "gba", sExePath, App.EXEName
+            IntegrateShell "asm", sExePath, App.EXEName
         End If
     Else
         ' Remove XSE from the .gba shell menu, if necessary
         If AlreadyIntegrated = True Then
-            UnintegrateShell "gba", App.EXEName
+            UnintegrateShell "asm", App.EXEName
         End If
     End If
     
@@ -113,7 +113,7 @@ Dim sMessage As String
         sMessage = LoadResString(4012)
     Else
         sMessage = "[RBC/RBH/RBT] " & LoadResString(4012 - chkAssoc.Value) & vbNewLine & _
-        "[GBA] " & LoadResString(4012 - chkIntegrate.Value)
+        "[ASM] " & LoadResString(4012 - chkIntegrate.Value)
     End If
     
     ' Display the message and exit

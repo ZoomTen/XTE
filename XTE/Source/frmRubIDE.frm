@@ -153,7 +153,7 @@ Begin VB.Form frmRubIDE
       _ExtentX        =   15505
       _ExtentY        =   767
       BackColor       =   -2147483633
-      ButtonCount     =   22
+      ButtonCount     =   11
       BtnCaption1     =   "File"
       BtnEnabled1     =   0   'False
       BeginProperty BtnFont1 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -323,163 +323,12 @@ Begin VB.Form frmRubIDE
       BtnTop11        =   2
       BtnWidth11      =   24
       BtnHeight11     =   24
-      BtnEnabled12    =   0   'False
-      BeginProperty BtnFont12 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft12       =   288
-      BtnTop12        =   2
-      BtnWidth12      =   24
-      BtnHeight12     =   24
-      BeginProperty BtnFont13 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft13       =   314
-      BtnTop13        =   2
-      BtnWidth13      =   24
-      BtnHeight13     =   24
-      BeginProperty BtnFont14 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft14       =   340
-      BtnTop14        =   2
-      BtnWidth14      =   24
-      BtnHeight14     =   24
-      BtnEnabled15    =   0   'False
-      BtnIcon15       =   "frmRubIDE.frx":06B0
-      BtnToolTipText15=   "Show Log"
-      BtnStyle15      =   1
-      BeginProperty BtnFont15 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnState15      =   5
-      BtnValue15      =   -1  'True
-      BtnLeft15       =   366
-      BtnTop15        =   2
-      BtnWidth15      =   24
-      BtnHeight15     =   24
-      BtnEnabled16    =   0   'False
-      BeginProperty BtnFont16 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft16       =   392
-      BtnTop16        =   2
-      BtnWidth16      =   24
-      BtnHeight16     =   24
-      BeginProperty BtnFont17 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft17       =   418
-      BtnTop17        =   2
-      BtnWidth17      =   24
-      BtnHeight17     =   24
-      BeginProperty BtnFont18 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft18       =   444
-      BtnTop18        =   2
-      BtnWidth18      =   24
-      BtnHeight18     =   24
-      BeginProperty BtnFont19 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft19       =   470
-      BtnTop19        =   2
-      BtnWidth19      =   24
-      BtnHeight19     =   24
-      BeginProperty BtnFont20 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft20       =   496
-      BtnTop20        =   2
-      BtnWidth20      =   24
-      BtnHeight20     =   24
-      BeginProperty BtnFont21 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft21       =   522
-      BtnTop21        =   2
-      BtnWidth21      =   24
-      BtnHeight21     =   24
-      BeginProperty BtnFont22 {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BtnLeft22       =   548
-      BtnTop22        =   2
-      BtnWidth22      =   24
-      BtnHeight22     =   24
       Begin VB.ComboBox cboFile 
          Height          =   315
          IntegralHeight  =   0   'False
-         ItemData        =   "frmRubIDE.frx":0A02
+         ItemData        =   "frmRubIDE.frx":06B0
          Left            =   600
-         List            =   "frmRubIDE.frx":0A0C
+         List            =   "frmRubIDE.frx":06BA
          TabIndex        =   1
          TabStop         =   0   'False
          Top             =   60
@@ -736,12 +585,6 @@ ScriptFile:
                 FileIndex = 0
                 LoadedFile = sResult
                 cboFile.ListIndex = 0
-                
-                Toolbar.BtnState(13) = STA_DISABLED
-                Toolbar.BtnState(14) = STA_DISABLED
-                Toolbar.BtnState(15) = STA_DISABLED
-                Toolbar.BtnState(21) = STA_DISABLED
-                
                 LoadFile
         End Select
         
@@ -1197,7 +1040,6 @@ Dim iLength As Integer
     
     Toolbar.BtnToolTipText(10) = LoadResString(13034)
     Toolbar.BtnToolTipText(11) = LoadResString(13035)
-    Toolbar.BtnToolTipText(15) = LoadResString(13037)
     
 End Sub
 
@@ -1387,7 +1229,6 @@ End Sub
 Private Sub Toolbar_ButtonClick(btnIndex As Long, sKey As String, iLeft As Integer, iTop As Integer, iWidth As Integer, iHeight As Integer, blnVisible As Boolean)
     
     Select Case btnIndex
-        
         Case 10
             Browse
         Case 11
@@ -1423,26 +1264,17 @@ Public Sub txtCode_Change()
             WasNotEmpty = True
         End If
         
-        Toolbar.BtnState(14) = STA_NORMAL
-
-        If GetExt(LoadedFile) = "gba" Then
-            Toolbar.BtnState(13) = STA_NORMAL
-            frmMain.mnuSave.Enabled = False
-        Else
+        frmMain.mnuSave.Enabled = IsDirty
+        
+        'Select Case GetExt(LoadedFile)
+        
+            'Case "rbc", "rbh", "rbt", "asm"
+                frmMain.mnuRevert.Enabled = IsDirty
+            'Case Else
+            '    frmMain.mnuRevert.Enabled = False
             
-            Toolbar.BtnState(13) = STA_DISABLED
-            frmMain.mnuSave.Enabled = IsDirty
+        'End Select
             
-            Select Case GetExt(LoadedFile)
-            
-                Case "rbc", "rbh", "rbt"
-                    frmMain.mnuRevert.Enabled = IsDirty
-                Case Else
-                    frmMain.mnuRevert.Enabled = False
-                
-            End Select
-            
-        End If
     Else
         
         IsDirty = False
@@ -1454,12 +1286,9 @@ Public Sub txtCode_Change()
         frmMain.mnuPrint.Enabled = False
         
         Toolbar.BtnState(10) = STA_DISABLED
-        Toolbar.BtnState(10) = STA_NORMAL
+        Toolbar.BtnState(10) = STA_NORMAL ' ??
         
         Toolbar.BtnState(11) = STA_DISABLED
-        Toolbar.BtnState(13) = STA_DISABLED
-        Toolbar.BtnState(14) = STA_DISABLED
-        Toolbar.BtnState(15) = STA_DISABLED
         
     End If
     
@@ -2165,8 +1994,6 @@ Private Sub cboFile_Click()
     m_FileIndex = cboFile.ListIndex
     cboFile.ToolTipText = GetFileName(LoadedFile)
     
-    Toolbar.BtnState(13) = STA_DISABLED
-    
     If LenB(LoadedFile) <> 0 Then
         
         frmMain.mnuBackup.Enabled = True
@@ -2183,12 +2010,8 @@ Private Sub cboFile_Click()
                 Toolbar.BtnState(11) = STA_DISABLED
             End If
             
-            Toolbar.BtnState(14) = STA_NORMAL
-            
         Else
             Toolbar.BtnState(11) = STA_DISABLED
-            Toolbar.BtnState(14) = STA_DISABLED
-            Toolbar.BtnState(15) = STA_DISABLED
         End If
         
     Else
@@ -2198,13 +2021,10 @@ Private Sub cboFile_Click()
         
         If LenB(txtCode.text) <> 0 Then
             Toolbar.BtnState(11) = STA_NORMAL
-            Toolbar.BtnState(14) = STA_NORMAL
             
 
         Else
             Toolbar.BtnState(11) = STA_DISABLED
-            Toolbar.BtnState(14) = STA_DISABLED
-            Toolbar.BtnState(15) = STA_DISABLED
         End If
         
     End If
