@@ -2863,7 +2863,13 @@ End Sub
 Private Sub txtCommandLine_Change()
 Dim lFileEnd As Long
 Dim sCommandLine As String
-    
+Dim sArray() As String
+Dim txtRE As RegExp
+Dim txtMatches As MatchCollection
+Dim txtMatch As Match
+Dim iLineNum As Long
+iLineNum = -1
+
     If CmdLineBusy = True Then Exit Sub
     CmdLineBusy = True
     
@@ -2883,8 +2889,19 @@ Dim sCommandLine As String
     End If
 
     If Not IsPrevInstance Then
-    
+        
         If LenB(sCommandLine) <> 0 Then
+            If InStrB(3, sCommandLine, ":") <> 0 Then
+                Set txtRE = New RegExp
+                txtRE.Pattern = ":\d+$"
+                Set txtMatches = txtRE.Execute(sCommandLine)
+                
+                If txtMatches.Count <> 0 Then
+                    sCommandLine = Replace$(sCommandLine, txtMatches.Item(0), "")
+                    iLineNum = Val(Mid$(txtMatches.Item(0), 2))
+                End If
+            End If
+            
             Select Case GetExt(sCommandLine)
                 
                 Case "rbc", "rbh", "rbt", "asm"
@@ -2899,6 +2916,10 @@ Dim sCommandLine As String
                         Document(Tabs.SelectedTab).LoadFile
                     Else
                         Call LoadNewDoc(, sCommandLine)
+                    End If
+                    
+                    If iLineNum > -1 Then
+                        GotoLine iLineNum
                     End If
                 
             End Select
