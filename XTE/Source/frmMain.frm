@@ -3606,7 +3606,6 @@ Dim sIniPath As String
     WriteStringToIni sIniPath, "Options", "ShowRecentFiles", -CInt(mnuShowRecentFiles.Checked)
     WriteStringToIni sIniPath, "Options", "CalcMode", -CInt(optDecHex(0).Value)
     WriteStringToIni sIniPath, "Options", "InlineHelp", -CInt(mnuInlineCommandHelp.Checked)
-    WriteStringToIni sIniPath, "Options", "AutoUpdateCheck", "0"
     WriteStringToIni sIniPath, "Options", "EmulatorPath", sEmulatorPath
     WriteStringToIni sIniPath, "Format", "BackgroundColor", lBackgroundColor
     WriteStringToIni sIniPath, "Format", "ForegroundColor", lForegroundColor
