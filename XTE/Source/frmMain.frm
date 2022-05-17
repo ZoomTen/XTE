@@ -1998,12 +1998,12 @@ Private Sub GetTabLimit()
 End Sub
 
 Private Sub MDIForm_Resize()
-    txtNotes.Height = (Me.Height / Screen.TwipsPerPixelY) - 300
     
     If IsPrevInstance Then Exit Sub
     
     If Me.WindowState <> vbMinimized Then
         GetTabLimit
+        txtNotes.Height = (Me.Height / Screen.TwipsPerPixelY) - 300
     End If
 
     If mnuMinimizetoSystemTray.Checked Then
