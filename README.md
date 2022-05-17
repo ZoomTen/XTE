@@ -17,7 +17,7 @@ Open the project file in Visual Basic 6 and `File > Make XTE.exe...` :p
 * Binary mode for calculator
 * Sidebar notes expanding to the height of the window
 * Auto-convert Unix/Linux line endings to windows line endings
-* <filename>:<lineno.> command line arguments supported
+* [filename]:[lineno.] command line arguments supported
 
 ## Integration info
 
