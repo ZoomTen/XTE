@@ -1315,7 +1315,7 @@ AlternateWay:
     GoTo Finalize
 
 Finalize:
-    sTemp = Replace(sTemp, vbLf, vbCrLf) ' Unix line ending to windows
+    sTemp = UnixToDos(sTemp) ' Unix line ending to windows
     SendMessageW txtTextBox.hWnd, WM_SETTEXT, 0&, ByVal StrPtr(sTemp)
 
 End Sub

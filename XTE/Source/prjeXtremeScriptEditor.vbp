@@ -42,6 +42,7 @@ Class=APITimer; APITimer.cls
 Module=modScripting; modScripting.bas
 Module=modBinDec; modBinDec.bas
 ResFile32="XTE.res"
+Module=modUnixToDos; modUnixToDos.bas
 IconForm="frmMain"
 Startup="Sub Main"
 HelpFile=""
