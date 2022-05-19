@@ -233,6 +233,7 @@ Begin VB.Form frmRubIDE
       TabIndex        =   3
       TabStop         =   0   'False
       Top             =   75
+      Visible         =   0   'False
       Width           =   8790
       _ExtentX        =   15505
       _ExtentY        =   767
@@ -429,7 +430,7 @@ Begin VB.Form frmRubIDE
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   4650
+      Height          =   5130
       HideSelection   =   0   'False
       Left            =   120
       MultiLine       =   -1  'True
@@ -437,7 +438,7 @@ Begin VB.Form frmRubIDE
       ScrollBars      =   3  'Both
       TabIndex        =   0
       TabStop         =   0   'False
-      Top             =   600
+      Top             =   120
       Width           =   8790
    End
 End
