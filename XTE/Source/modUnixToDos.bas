@@ -1,4 +1,6 @@
 Attribute VB_Name = "modUnixToDos"
+Option Explicit
+
 Public Function UnixToDos(sText As String) As String
 ' Converts a string with UNIX line endings to DOS line endings
 

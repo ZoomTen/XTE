@@ -1,4 +1,6 @@
 Attribute VB_Name = "modBinDec"
+Option Explicit
+
 Public Function DecToBin(DeciValue As Long, Optional NoOfBits As Integer = 0) _
 As String
 '********************************************************************************
@@ -24,13 +26,13 @@ Function BinToDec(Num As String) As Long
 '* Date : 2003
 '* Author : Sweet
 '*********************************************************************************
-  Dim n As Integer
+  Dim n, a, X, Y As Integer
      n = Len(Num) - 1
      a = n
      Y = 0
      Do While n > -1
-        x = Mid(Num, ((a + 1) - n), 1)
-        BinToDec = IIf((x = "1"), BinToDec + (2 ^ (n)), BinToDec)
+        X = Mid(Num, ((a + 1) - n), 1)
+        BinToDec = IIf((X = "1"), BinToDec + (2 ^ (n)), BinToDec)
         n = n - 1
      Loop
 End Function
