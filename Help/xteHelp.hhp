@@ -1,0 +1,20 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Guide.chm
+Contents file=index.hhc
+Default topic=pages\index.html
+Display compile progress=No
+Language=0x409 English (United States)
+Title=XTE - Xtreme Text Editor
+
+
+[FILES]
+pages\index.html
+pages\oginfo.html
+pages\theory\index.html
+pages\theory\math.html
+pages\theory\code.html
+pages\tools\index.html
+
+[INFOTYPES]
+

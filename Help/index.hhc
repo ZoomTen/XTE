@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBliC "-//IETF//DTD html//EN">
+<html>
+	<head>
+		<meta name="generator" content="Notepad">
+	</head>
+	
+	<body>
+		<!-- why? -->
+		<object type="text/site properties">
+			<param name="Window Styles" value="0x800025">
+		</object>
+
+		<ul>
+			<!-- beginning page -->
+			<li><object type="text/sitemap">
+					<param name="name"	value="XTE - Xtreme Text Editor">
+					<param name="local" value="pages\index.html">
+				</object>
+			
+			<!-- info page -->
+			<li><object type="text/sitemap">
+					<param name="name"	      value="Information on XSE">
+					<param name="local"       value="pages\oginfo.html">
+					<param name="imagenumber" value="17">
+				</object>
+			
+			<!-- basics -->
+			<li><object type="text/sitemap">
+					<param name="name"	value="The Basics">
+					<param name="local" value="pages\theory\index.html">
+				</object>
+				
+				<!-- basics.. contents -->
+				<ul>
+					<li><object type="text/sitemap">
+							<param name="name"	value="Math">
+							<param name="local" value="pages\theory\math.html">
+						</object>
+					<li><object type="text/sitemap">
+							<param name="name"	value="Code">
+							<param name="local" value="pages\theory\code.html">
+						</object>
+				</ul>
+			
+			<!-- tools -->
+			<li><object type="text/sitemap">
+					<param name="name"	value="The Tools">
+					<param name="local" value="pages\tools\index.html">
+				</object>
+				
+				<!-- tools contents -->
+				<ul>
+					<li>PolishedMap
+					<li>XTE
+				</ul>
+		</ul>
+	</body>
+</html>

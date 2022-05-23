@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>XTE - XTE Manual</title>
+		<link rel="stylesheet" href="../style.css" media="screen"/>
+	</head>
+	<body>
+		<h1>
+      <img src="../logo.bmp"" width="32" height="32" alt="XTE logo">
+      XTE - Xtreme Text Editor<br>
+      <span>Literally Notepad with extras</span>
+		</h1>
+		<h2>XTE</h2>
+		<p>
+			Isn't it funny, a whole manual tucked inside a chapter of the program's
+			own help. Alright, let's take a look...
+		</p>
+		<h3>Interface Operations</h3>
+		<img src="images/xte_interface.bmp" class="figureimg" alt="XTE's interface, showing a menu at the top, two tabs of ASM files being opened (with one visible in the main text area), a sidebar with a calculator and notes, and a status bar, showing the current line, column and selected characters, among other information.">
+		<hr>
+		<h4>Menu</h4>
+		<p>
+			The following menus are available:
+		</p>
+		<ul>
+			<li><b>File</b> - Basic file operations. Create a new tab for a new file,
+				open, save, close file, look at recent files, you get the picture.
+				You can also print text files if you want.
+			</li>
+			<li>
+				<b>Edit</b> - Editing operations, undo/redo, cut/copy/paste... but there's
+				also some other functions such as:
+					<ul>
+						<li><b>Backup</b> - Backs up the current file. <b>Ctrl+K</b> is
+							the hotkey for this. If your file is [FILENAME].asm, your
+							backup will be [FILENAME].bak.
+						</li>
+						<li><b>Read Only</b> - Disables or enables editing inside the
+							current tab.
+						</li>
+						<li><b>Revert</b> - Reverts any changes made to the current file
+							since the last save. In other words, it basically reloads
+							the current file.
+						</li>
+						<li><b>Insert Date/Time</b> - Inserts the current date and time
+							at cursor position, according to your computer's locale.
+						</li>
+					</ul>
+			</li>
+			<li>
+				<b>Format</b> - Edits the appearance of the script area. You may change
+					the colors and fonts here.
+			</li>
+			<li>
+				<b>Options</b> - You can adjust how the program works here.
+					<ul>
+						<li><b>Always on Top</b> - Sets the program to always be displayed
+							on top of other windows.
+						</li>
+						<li><b>Minimize to System Tray</b> - In case you don't want to
+							clutter up your task bar. (A little buggy for now)
+						</li>
+						<li><b>Remember Window Size</b> - If you want to have the program
+							be opened at the same size as when you closed it.
+						</li>
+						<li><b>Auto Save</b> - Opens this dialog box that lets you adjust
+							how often should files be auto-saved.
+							<img src="images/autosave.bmp" class="figureimg" alt="The auto-save dialog, showing a checkbox that says Save RBC/RBH/RBT/ASM files automatically every:, with a slider that adjusts how many seconds until the file is autosaved.">
+						</li>
+						<li><b>Show Recent Files</b> - Affects the <b>File</b> menu.
+						</li>
+						<li><b>Line Numbers</b> - Toggles displaying line numbers in the
+							script view.
+						</li>
+						<li><b>Inline Command Help</b> - When you're typing a script, this
+							option tries to assist you in setting parameters for a command
+							or directive, like so:
+							<img src="images/inlinehelp.bmp" class="figureimg" alt="XTE's inline help system, showing a partially typed command, with a tooltip showing the current parameters left to type.">
+						</li>
+						<li><b>Associate</b> - This enables XTE to be associated with a few file formats.
+						</li>
+					</ul>
+			</li>
+			<li>
+				<b>Tools</b> - Additional tools to assist in script writing.
+					<ul>
+						<li><b>Script Templates</b> - (I haven't touched this yet, so
+							ignore it for now. It's supposed to have templates you
+							can use as a base)
+						</li>
+						<li><b>Text Adjuster</b> - Will be explained later in the
+							document.
+						</li>
+					</ul>
+			</li>
+			<li>
+				<b>Help</b> - Help files, command reference and XTE version info.
+			</li>
+		</ul>
+		<h4>Script Area</h4>
+		<p>
+			The script area is, of course, where you'll do most of your work.
+			Line numbers are enabled by default to orient yourself more easily in
+			long scripts.
+		</p>
+		<h4>Status Bar</h4>
+		<p>
+			Displays various information about the current script. It can be divided
+			into the following panels:
+		</p>
+		<ul>
+			<li><b>File Status</b> - When first loaded or idle, it will show
+				tips. When a file is loaded, it will display how much time it took
+				to show the file.
+			</li>
+			<li><b>File Info</b> - Shows where exactly in the file is the cursor placed
+				- and if there is anything selected, it will show how many characters
+				there are in the selection
+			</li>
+			<li><b>Software Attribution</b> - Shows the author and year of the program.
+			</li>
+			<li><b>Dirty Indicator</b> - This indicator will turn black if the file
+				is edited but has not been saved
+			</li>
+			<li><b>Caps Lock</b> - Turns black when Caps Lock is enabled. You can
+				also toggle it by double clicking on it, which affects the actual
+				keyboard's status.
+			</li>
+			<li><b>Num Lock</b> - Same as before, but with the Num Lock toggle instead.
+			</li>
+			<li><b>Scroll Lock</b> - Same as before, but with the Scroll Lock toggle.
+			</li>
+		</ul>
+		<h4>Calculator</h4>
+		<p>
+			A part of the side bar, the calculator pretty much does what you expect.
+			Saves good time diving for <code>calc.exe</code> (or, if it's open, trying
+			to find it in the taskbar). It allows for easy conversion between binary,
+			hexadecimal and decimal numbers, as well as perform your basic calculations.
+			The numbers displayed are not prefixed, as its base is indicated by the
+			current mode selection.
+		</p>
+		<p>
+			(At the moment, most operations won't work in binary mode)
+		</p>
+		<p>Explanation of the extra buttons:</p>
+		<ul>
+			<li><b>and</b> - Performs a bitwise AND with another number.
+			</li>
+			<li><b>xor</b> - Performs a bitwise exclusive OR (XOR, EXOR, EOR) with
+				another number.
+			</li>
+			<li><b>or</b> - Performs a bitwise OR with another number.
+			</li>
+			<li><b>not</b> - Performs a logical NOT. Compared to the <b>+/-</b>
+				operation (which does a 2's complement), this simply does a 1's complement.
+			</li>
+			<li><b>lsh</b> - Performs a bitwise left shift by positions indicated by another number.
+			</li>
+			<li><b>rsh</b> - Performs a bitwise right shift by positions indicated by another number.
+			</li>
+			<li><b>ptr</b> - Converts a hexadecimal number (as ROM address) into a
+				Game Boy Advance pointer.
+			</li>
+			<li><b>ofs</b> - Converts a hexadecimal number (as a Game Boy Advance pointer)
+				into a ROM address.
+			</li>
+			<li><b>MS</b> - Saves the currently displayed number into calculator memory (1 number only!).
+			</li>
+			<li><b>MR</b> - Recalls the saved number from memory.
+			</li>
+			<li><b>MC</b> - Clears the calculator memory.
+			</li>
+		</ul>
+		<h4>Notes</h4>
+		<p>
+			In more mainstream programmer's text editors, notes can usually be displayed
+			side-by-side with the main file. This, however, adds a bit of work (need to
+			find or create a notes file, need to adjust the editor for comfortable
+			editing, etc.). This program offers a built-in sticky as part of the sidebar
+			for things like making a note of constants or details of scripts.
+		</p>
+		<p>
+			The notes typed in this area is automatically saved at Notes.txt of the
+			app's folder, and can be opened using any text editor.
+		</p>
+		<h4>Command Help</h4>
+		<img src="images/commandhelp.bmp" class="figureimg" alt="XTE's command help showing details of 'takeitem'. Details: Removes an instance of item x quantity from the players bag. Parameters include Item ID and how much.">
+		<p>
+		As the name might suggest, it provides an overview of various scripting commands.
+		The command help may be explored freely to see what's possible, or can be called
+		through the script area. When called through the script area, it is context-aware.
+		This means, if your cursor is located at a line which contains <i>sjump</i>, it will open the
+		details for the <i>sjump</i> command.
+		</p>
+		<h4>Text Adjuster</h4>
+		<img src="images/textadjuster.bmp" class="figureimg" alt="XTE's text adjuster window, showing the beginning portion of the Bee Movie script.">
+		<p>
+			This feature remains useful, and even more so when applied to GBC hacking,
+			as unlike the GBA games which use variable width text, GBC scripts use
+			fixed width text.
+		</p>
+		<p>
+			Using this tool, there's no need to futz around with making comments that
+			mark the maximum number of characters supported. Just type in your text,
+			press <b>Convert</b>, and then <b>Insert</b> it into the text. You can
+			also still set a custom character limit. Either way, the textbox on the
+			left of the character limit will show how close you are to breaching
+			the character limit. (green to red)
+		</p>
+		<p>
+			To create a new paragraph, create one blank line between the current
+			paragraph and the next (press Enter twice).
+		</p>
+		<h3>Hotkey Reference</h3>
+	<p>
+		These were copied directly from XSE; I will have to adjust these later.
+	</p>	
+<ul>
+  <li>
+    <b>Ctrl+A</b>: select all the text</li>
+  <li>
+    <b>Ctrl+B</b>: open the Batch Compiler</li>
+  <li>
+    <b>Ctrl+C</b>: copy selected text</li>
+  <li>
+    <b>Ctrl+D</b>: open the Decompile Options</li>
+  <li>
+    <b>Ctrl+F</b>: open up the Find &amp; Replace</li>
+  <li>
+    <b>Ctrl+G</b>: goes to a specific line in the script</li>
+  <li>
+    <b>Ctrl+H</b>: open Hex Viewer</li>
+  <li>
+    <b>Ctrl+K</b>: backup the loaded script/ROM</li>
+  <li>
+    <b>Ctrl+L</b>: hide/show line numbers</li>
+  <li>
+    <b>Ctrl+M</b>: hide/show menu</li>
+  <li>
+    <b>Ctrl+N</b>: open a new tab</li>
+  <li>
+    <b>Ctrl+O</b>: open a file or a ROM</li>
+  <li>
+    <b>Ctrl+P</b>: print current script</li>
+  <li>
+    <b>Ctrl+Q</b>: exit XSE</li>
+  <li>
+    <b>Ctrl+R</b>: open ROM Resizer</li>
+  <li>
+    <b>Ctrl+S</b>: save current script</li>
+  <li>
+    <b>Ctrl+T</b>: run the Text Adjuster</li>
+  <li>
+    <b id=lkd:3>Ctrl+</b><b>U</b>: run live update</li>
+  <li>
+    <b>Ctrl+V</b>: paste text</li>
+  <li>
+    <b>Ctrl+W</b>: close current tab</li>
+  <li>
+    <b>Ctrl+X</b>: cut selected text</li>
+  <li>
+    <b>Ctrl+Y</b>: redo last change made to the script</li>
+  <li>
+    <b>Ctrl+Z</b>: undo last change made to the script</li>
+  <li>
+    <b>Ctrl++</b>: zoom the font in</li>
+  <li>
+    <b>Ctrl+-</b>: zoom the font out</li>
+  <li>
+      <b>Del</b>: delete selected text</li>
+  <li>
+      <b>F1</b>: show command help</li>
+  <li>
+      <b>F2</b>: open this guide</li>
+  <li>
+      <b>F5</b>: revert/load last saved version of the actual script</li>
+  <li>
+      <b>Shift+Ctrl+A</b>: load the text, if any, on the current line into the Text Adjuster</li>
+  <li>
+      <b>Shift+Ctrl+B</b>: browse folder to load a script file or a ROM</li>
+  <li>
+      <b>Shift+Ctrl+C</b>: compile the current script</li>  
+  <li>
+      <b>Shift+Ctrl+D</b>: decompile the script located at the offset specified</li>
+  <li>
+      <b>Shift+Ctrl+F</b>: open the folder where the current script/ROM is</li>
+  <li>
+      <b>Shift+Ctrl+G</b>: debug the current script</li>
+  <li>
+      <b>Shift+Ctrl+H</b>: open the Hex Viewer using the offset found on the text selection, if any</li>
+  <li>
+      <b>Shift+Ctrl+L</b>: show last log, if any</li>
+  <li>
+      <b>Shift+Ctrl+O</b>: set the focus to the offset textbox in the toolbar</li>
+  <li>
+      <b>Shift+Ctrl+S</b>: save the current script</li>
+  <li>
+      <b>Shift+Ctrl+X</b>: insert the string &quot;#org 0x&quot; in the current script</li>
+</ul>
+		<div id="footer">
+      Written by Zumi in 2022
+		</div>
+	</body>
+</html>

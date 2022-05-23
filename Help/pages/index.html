@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>XTE - the Xtreme Text Editor</title>
+		<link rel="stylesheet" href="style.css" media="screen"/>
+	</head>
+	<body>
+		<h1>
+      <img src="logo.bmp" width="32" height="32" alt="XTE logo">
+      XTE - Xtreme Text Editor<br>
+      <span>Literally Notepad with extras</span>
+		</h1>
+		<img src="app.gif" alt="XTE interface preview" id="intropic">
+		<h2>Overview</h2>
+		<p>
+			XTE is a text editor, forked off the
+			eXtreme Script Editor (XSE).
+		</p>
+		<h2>What's New?</h2>
+		<p>
+			This fork removes the very purpose of the original tool,
+			by gutting out every piece of scripting support. The end
+			result, is that you basically have a glorified Notepad.
+		</p>
+		<p>
+			And instead of being suited for the GBA Pok&eacute;mon games,
+			it's now suited for the GB/GBC ones. Specifically, its
+			disassemblies. With fully complete disassembly and
+			mostly documented code, it's become easier than ever to
+			do drastic changes and add many features to the games.
+			As for scripting: just open
+			a text file, hack away and recompile!
+		</p>
+		<p>
+			Incidentally, you also have these over vanilla XSE.
+			(Maybe I'll make a version of XSE with these changes)
+		</p>
+		<ul>
+			<li>Tab indentation is possible in the code editor</li>
+			<li>Adds a binary mode in the calculator</li>
+			<li>Sidebar notes expand to the height of the window</li>
+			<li>Can operate on files originally with Unix/Linux line
+				endings (which is more often these days). Do note that
+				it <strong>automatically converts these files to Windows
+				line endings</strong> to do so.
+			</li>
+			<li>You can jump to a line number through the command line
+				now, just invoke <code>XTE.exe YourFileHere.asm:14</code>
+				to jump to line 14 of that file.
+			</li>
+		</ul>
+		<hr>
+		<div id="footer">
+      Written by Zumi in 2022
+		</div>
+	</body>
+</html>
